@@ -15,9 +15,18 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
+../backend/.idea
+./backend/.idea
+/backend/.idea
+../backend/.idea/*
+./backend/.idea/*
+/backend/.idea/*
+../.idea/
+backend/.idea/*
 *.iws
 *.iml
 *.ipr
+*.idea
 
 ### NetBeans ###
 /nbproject/private/
