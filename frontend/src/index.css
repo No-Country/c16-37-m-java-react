@@ -2,21 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* estilos de nomenclatura usados */
+/* https://www.freecodecamp.org/espanol/news/convenciones-de-nomenclatura-de-css-que-te-ahorraran-horas-de-depuracion/ */
+/* uso de variables en css */
+/* https://developer.mozilla.org/es/docs/Web/CSS/Using_CSS_custom_properties */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 18px; /* debería ser responsive */
+
+  --color-icon: #344854ff;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;  /* dinamyc viewport height https://www.campusmvp.es/recursos/post/css-lvh-svh-y-dvh-las-unidades-de-medida-para-pantallas-moviles.aspx */
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
+}
+#root{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
 }

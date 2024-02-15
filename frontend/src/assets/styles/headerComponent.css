@@ -1,0 +1,24 @@
+
+.header-container{
+    height: 30vh;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.header-container > img{
+    position: absolute;
+    top: 0.5em;
+    margin-left: 7em;
+}
+.nav-icon-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 2em
+} 
+.nav-search, .nav-icon{
+    margin: 0 1em;
+} 
+.nav-icon-right{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
