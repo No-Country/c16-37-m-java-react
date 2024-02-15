@@ -24,7 +24,7 @@ h1 {
   line-height: 1.1;
 }
 #root{
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100vw;
 
