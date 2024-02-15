@@ -7,6 +7,7 @@ import java.util.Set;
 
 @Getter @Setter
 public class RegisteredUserDto {
+    private Long id;
     private String username;
     private String firstName;
     private String lastName;

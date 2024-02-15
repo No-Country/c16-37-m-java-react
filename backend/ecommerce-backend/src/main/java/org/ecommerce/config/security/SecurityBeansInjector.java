@@ -3,7 +3,6 @@ package org.ecommerce.config.security;
 import lombok.AllArgsConstructor;
 import org.ecommerce.exceptions.ResourceNotFoundException;
 import org.ecommerce.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -54,18 +53,13 @@ public class SecurityBeansInjector {
     // Por lo tanto, UserDetailsService es una interfaz que se utiliza para cargar los datos del usuario, mientras que UserDetails es una interfaz que representa los detalles de un usuario.
     // Por ejemplo, UserDetails tiene métodos como getUsername(), getPassword() y getAuthorities(), que se utilizan para obtener el nombre de usuario, la contraseña y los roles de un usuario, respectivamente.
     // Los detalles del usuario se utilizan para autenticar al usuario en la aplicación.
+
     @Bean
     public UserDetailsService userDetailsService(){
         return username -> userRepository.findByUsername(username)
                     .orElseThrow(() -> new ResourceNotFoundException("user","username",username));
     }
 
-    @Value("${default.role}")
-    private String defaultRole;
-
-    @Bean
-    public String getDefaultRole() {
-        return defaultRole;
-    }
 
 }
+
