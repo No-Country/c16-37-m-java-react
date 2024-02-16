@@ -1,8 +1,13 @@
 import '../assets/styles/bodyComponent.css'
+import { MainBodyComponent } from './bodyComponents/mainBodyComponent'
+import React, { useState } from 'react';
+ 
 export const BodyComponent = () => {
+  const [showMain, setShowMain] = useState(true);
   return (
     <>
-    <h1 className="text-3xl font-bold underline">No Country - c16-31-m-java-react</h1>
+      {showMain ? ( <MainBodyComponent /> ) : null}
+      
     </>
     )
 }
