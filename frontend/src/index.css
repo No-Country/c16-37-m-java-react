@@ -9,7 +9,7 @@
 
 :root {
   font-weight: 400;
-  font-size: 18px; /* debería ser responsive */
+  font-size: calc(16px + 0.25vw);
 
   --color-icon: #344854ff;
 }
@@ -17,6 +17,7 @@
 body {
   min-width: 320px;
   min-height: 100dvh;  /* dinamyc viewport height https://www.campusmvp.es/recursos/post/css-lvh-svh-y-dvh-las-unidades-de-medida-para-pantallas-moviles.aspx */
+  overflow-x: hidden;
 }
 
 h1 {

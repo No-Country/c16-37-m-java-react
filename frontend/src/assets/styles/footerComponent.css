@@ -1,0 +1,29 @@
+.footer-container{
+    margin-top: 5em;
+}
+.footer-column-container{
+    display: flex;
+    justify-content: space-evenly;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.footer-column-container h3{
+    font-weight: bold;
+    margin: 1em 0;
+}
+.footer-column-container ul{
+    min-width: 170px;
+    max-width: 100%;
+    margin: 1em 0.5em;
+}
+.footer-column-container li{
+    font-size: 0.8em;
+}
+.footer-line{
+    width: 100%;
+    border: 1px solid black;
+}
+.footer-line:last-of-type{
+    margin: 2em 0 2em 0;
+}
