@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter @Setter
@@ -20,13 +21,13 @@ public class CartItems {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Cart cart;
-    @ManyToOne(mappedBy = "product", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Product> productSet = new HashSet<>();
 
     public CartItems() {
     }
 
-    private CartItems(double discount, double product_price, int quantity, Cart cart, Set<Product> productSet) {
+    public CartItems(double discount, double product_price, int quantity, Cart cart, Set<Product> productSet) {
         this.discount = discount;
         this.product_price = product_price;
         this.quantity = quantity;

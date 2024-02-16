@@ -2,13 +2,14 @@ package org.ecommerce.models.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
 
-@Setter
-@Getter
+@Setter @Getter
 @Entity
+@NoArgsConstructor
 @Table( name = "cart")
 public class Cart {
 
@@ -18,15 +19,12 @@ public class Cart {
     private double totalPrice;
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userId;
+    private User user;
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private Set<CartItems> cartItemsSet;
 
-    public Cart() {
-    }
-
-    private Cart(double totalPrice, User userId) {
+    private Cart(double totalPrice, User user) {
         this.totalPrice = totalPrice;
-        this.userId = userId;
+        this.user = user;
     }
 }
