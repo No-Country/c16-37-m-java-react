@@ -6,6 +6,7 @@ import org.ecommerce.models.dto.RegisteredUserDto;
 import org.ecommerce.services.auth.AuthenticationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
@@ -21,7 +22,8 @@ public class UserController {
         return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
     }
 
-    @GetMapping("/user")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/auth")
     public ResponseEntity<String> findAll(){
         return ResponseEntity.ok("Hello World");
     }

@@ -1,5 +1,6 @@
 package org.ecommerce.services;
 
+
 import lombok.RequiredArgsConstructor;
 import org.ecommerce.exceptions.InvalidPasswordException;
 import org.ecommerce.exceptions.ResourceNotFoundException;
@@ -12,6 +13,8 @@ import org.ecommerce.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Collections;
 import java.util.Optional;
 
@@ -27,6 +30,7 @@ public class UserServiceImpl implements UserService{
     @Value("${default.role}")
     private String defaultRole;
 
+    @Transactional
     public User registerOneUser(RegisteredUser registeredUser) {
         validatePassword(registeredUser);
         User user = userMapper.toUser(registeredUser);
@@ -37,6 +41,7 @@ public class UserServiceImpl implements UserService{
         return userRepository.save(user);
     }
 
+    @Transactional(readOnly = true)
     public Optional<User> findByUsername(String username){
         return userRepository.findByUsername(username);
     }
