@@ -12,6 +12,7 @@ export const HeaderComponent = () => {
     event.preventDefault()
   }
   const [openSideBar, setOpenSideBar] = useState(false)
+  const [sideBarCategorySelect, setSideBarCategorySelect] = useState('1')
   return (
     <>
       <h1 className="text-3xl font-bold underline">No Country - c16-31-m-java-react</h1>
@@ -53,7 +54,7 @@ export const HeaderComponent = () => {
       </div>
 
  
-    <div className='side-bar'>
+    <div className='sidebar'>
       <div className={`${!openSideBar && "hidden"} bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm`} onClick={() => setOpenSideBar(false)}></div>
 
       <div className={`${openSideBar ? "w-80" : "w-0"} bg-white min-h-screen fixed top-0 left-0 transition-all duration-300`}>
@@ -61,32 +62,41 @@ export const HeaderComponent = () => {
           <button className='absolute top-0 right-0 h-16 w-16 ' onClick={() => setOpenSideBar(false)}>
             <img src={iconCross} alt="" width={22}/>
           </button>
-          <img className="side-bar-logo ml-8 mt-2 mb-8" src={imgLogo} alt="" width="200" />
-          {/* <div className='text-center text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2'>Link 1</div>
-          <div className='text-center text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2'>Link 2</div>
-          <div className='text-center text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2'>Link 3</div>
-          <div className='text-center text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2'>Link 4</div>
-          <div className='text-center text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2'>Link 5</div> */}
+          <img className="sidebar-logo ml-8 mt-2 mb-8" src={imgLogo} alt="" width="200" />
         
-        
-        <div className="flex overflow-x-auto overflow-y-hidden border-b border-gray-200 whitespace-nowrap dark:border-gray-700">
-            <button className="inline-flex items-center h-10 px-4 -mb-px text-sm text-center text-black-900 bg-transparent border-b-2 border-blue-500 sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none">
-                MUJER
-            </button>
+          <div className="sidebar-category-container flex overflow-x-auto whitespace-nowrap justify-center">
+              <button onClick={() => setSideBarCategorySelect('1')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base dark:border-gray-500 dark:text-white whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '1' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
+                  MUJER
+              </button>
 
-            <button className="inline-flex items-center h-10 px-4 -mb-px text-sm text-center text-gray-600 bg-transparent border-b-2 border-transparent sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400">
-                HOMBRE
-            </button>
+              <button onClick={() => setSideBarCategorySelect('2')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base dark:border-gray-500 dark:text-white whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '2' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
+                  HOMBRE
+              </button>
 
-            <button className="inline-flex items-center h-10 px-4 -mb-px text-sm text-center text-gray-600 bg-transparent border-b-2 border-transparent sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400">
-                NIÑOS
-            </button>
-        </div>
-        
-        
-        
-        
-        
+              <button onClick={() => setSideBarCategorySelect('3')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base dark:border-gray-500 dark:text-white whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '3' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
+                  NIÑOS
+              </button>
+          </div>
+          
+          
+          <div className="sidebar-subcategory-container">
+            <div className="sidebar-subcategory flex-row flex-wrap">
+              <div className="sidebar-subcategory-item">ABRIGOS | TRENCH</div>
+              <div className="sidebar-subcategory-item">CHAQUETAS</div>
+              <div className="sidebar-subcategory-item">BLAZERS</div>
+              <div className="sidebar-subcategory-item">VESTIDOS | MONOS</div>
+              <div className="sidebar-subcategory-item">CAMISAS | TOPS</div>
+              <div className="sidebar-subcategory-item">CAMISETAS</div>
+              <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
+              <div className="sidebar-subcategory-item">PANTALONES</div>
+              <div className="sidebar-subcategory-item">JEANS</div>
+              <div className="sidebar-subcategory-item">FALDAS | SHORTS</div>
+              <div className="sidebar-subcategory-item">ZAPATOS</div>
+              <div className="sidebar-subcategory-item">BOLSOS</div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
