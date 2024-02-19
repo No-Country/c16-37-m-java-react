@@ -16,6 +16,8 @@ public class UserController {
 
     private AuthenticationService authenticationService;
 
+
+//    @CrossOrigin(origins = "https://www.google.com")
     @PostMapping("/user")
     public ResponseEntity<RegisteredUserDto> registerUser(@RequestBody RegisteredUser user) {
         RegisteredUserDto registeredUser = authenticationService.registerOneUser(user);

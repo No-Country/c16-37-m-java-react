@@ -50,7 +50,8 @@ public class AuthenticationService {
                 "authorities", user.getAuthorities()
         );
     }
-    @Transactional(readOnly = true)
+
+    @Transactional
     public AuthenticationResponse login(UserRequest userRequest) {
         Authentication authentication = new UsernamePasswordAuthenticationToken(
                 userRequest.getUsername(),userRequest.getPassword()
@@ -64,7 +65,7 @@ public class AuthenticationService {
         return authResponse;
     }
 
-    private void saveToken(User user, String jwtToken) {
+    public void saveToken(User user, String jwtToken) {
         JwtToken token = new JwtToken();
         token.setToken(jwtToken);
         token.setUser(user);
