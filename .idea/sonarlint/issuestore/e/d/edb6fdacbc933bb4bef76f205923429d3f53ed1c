@@ -1,0 +1,13 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(â¢Ìÿÿÿÿÿ8œ¡±¾Ú1
+Q
+java:S3740'"/Provide the parametrized type for this generic.(Ö¡Áıÿÿÿÿ8œ¡±¾Ú1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ÿ¡±¾Ú1
+o
+java:S6204""RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8¥¡±¾Ú1
+o
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8˜ô…×Ú1
+p
+java:S1612"NReplace this lambda with method reference 'RespuestaListadoProductosDTO::new'.(ÿĞçùÿÿÿÿ8§¡±¾Ú1
