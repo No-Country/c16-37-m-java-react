@@ -4,11 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.ecommerce.models.entity.Cart;
 import org.ecommerce.models.entity.CartItems;
-import org.ecommerce.models.entity.Product;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.ecommerce.models.producto.dto.RespuestaListadoProductosDTO;
 
 @Getter @Setter
 public class CartItemsDTO {
@@ -18,7 +17,7 @@ public class CartItemsDTO {
     private double product_price;
     private int quantity;
     private Cart cart;
-    private Set<ProductDTO> productSet;
+    private Set<RespuestaListadoProductosDTO> productSet;
 
     public CartItemsDTO(CartItems cartItems) {
         this.id = cartItems.getId();
@@ -28,7 +27,7 @@ public class CartItemsDTO {
         this.cart = cartItems.getCart();
         this.productSet = cartItems.getProductSet()
                                     .stream()
-                                    .map(product -> new ProductDTO(product))
+                                    .map(product -> new RespuestaListadoProductosDTO(product))
                                     .collect(Collectors.toSet());
     }
 }

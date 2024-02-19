@@ -1,5 +1,6 @@
 package org.ecommerce.exceptions;
 
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
@@ -11,14 +12,14 @@ public class ResourceNotFoundException extends RuntimeException {
 
     private String resourceName;
     private String fieldName;
-    private Integer fieldValue;
+    private Serializable fieldValue;
 
     public ResourceNotFoundException(String resourceName) {
         super(String.format("No se encontraron %s en el sistema", resourceName));
         this.resourceName = resourceName;
     }
 
-    public ResourceNotFoundException(String resourceName,String fieldName, Integer fieldValue) {
+    public ResourceNotFoundException(String resourceName,String fieldName, Serializable fieldValue) {
         super(String.format("No se encontro el %s con %s : '%s' en el sistema", resourceName,fieldName, fieldValue));
         this.resourceName = resourceName;
         this.fieldName = fieldName;
