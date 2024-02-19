@@ -3,7 +3,6 @@ package org.ecommerce.config.security;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -12,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -29,21 +27,15 @@ public class HttpSecurityConfig {
     private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        return httpSecurity
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
-                .sessionManagement(sessionManagement -> sessionManagement
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .authenticationProvider(daoAuthenticationProvider)
-                .authorizeHttpRequests(authorizeRequests -> { // Se configuran las rutas que requieren autenticación
-                    authorizeRequests.requestMatchers(HttpMethod.POST, "/api/v1/user").permitAll();
-                    authorizeRequests.requestMatchers(HttpMethod.POST, "/api/v1/login").permitAll();
-                    authorizeRequests.requestMatchers(HttpMethod.POST, "/api/v1/profile").permitAll();
-                    authorizeRequests.requestMatchers(HttpMethod.POST, "/api/v1/logout").permitAll();
-                    authorizeRequests.anyRequest().authenticated();
-                }).build();
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(authorizeRequests -> {
+                    authorizeRequests.anyRequest().permitAll();
+                })
+                .build();
     }
 
     @Bean

@@ -2,13 +2,10 @@ package org.ecommerce.controllers;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import org.ecommerce.models.categorie.dto.CreateCategoryDTO;
-import org.ecommerce.models.categorie.entity.Category;
 import org.ecommerce.models.producto.dto.UpdateProductDTO;
 import org.ecommerce.models.producto.entity.Producto;
 import org.ecommerce.models.producto.dto.RegistrarProductoDTO;
 import org.ecommerce.models.producto.dto.RespuestaListadoProductosDTO;
-import org.ecommerce.services.category.CategoryService;
 import org.ecommerce.services.producto.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/producto")
 public class ProductoController {
+
     @Autowired
     private ProductoService productoService;
 
