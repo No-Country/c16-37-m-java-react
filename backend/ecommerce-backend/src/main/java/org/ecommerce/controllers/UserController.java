@@ -24,7 +24,6 @@ public class UserController {
         return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/auth")
     public ResponseEntity<String> findAll(){
         return ResponseEntity.ok("Hello World");
