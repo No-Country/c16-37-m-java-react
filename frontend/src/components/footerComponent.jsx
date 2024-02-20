@@ -51,7 +51,6 @@ export const FooterComponent = () => {
         </ul>
       </div>
     </div>
-    <div className='footer-line'></div>
     </div>
     </>
   )

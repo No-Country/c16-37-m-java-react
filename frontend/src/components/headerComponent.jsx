@@ -55,9 +55,9 @@ export const HeaderComponent = () => {
 
  
     <div className='sidebar'>
-      <div className={`${!openSideBar && "hidden"} bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm`} onClick={() => setOpenSideBar(false)}></div>
+      <div className={`${!openSideBar && "hidden"} sidebar-bg bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm`} onClick={() => setOpenSideBar(false)}></div>
 
-      <div className={`${openSideBar ? "w-80" : "w-0"} bg-white min-h-screen fixed top-0 left-0 transition-all duration-300`}>
+      <div className={`${openSideBar ? "w-80" : "w-0"} sidebar-body bg-white min-h-screen fixed top-0 left-0 transition-all duration-300 overflow-hidden`}>
         <div className={`${!openSideBar && "hidden"} pt-3 relative`}>
           <button className='absolute top-0 right-0 h-16 w-16 ' onClick={() => setOpenSideBar(false)}>
             <img src={iconCross} alt="" width={22}/>
@@ -65,22 +65,22 @@ export const HeaderComponent = () => {
           <img className="sidebar-logo ml-8 mt-2 mb-8" src={imgLogo} alt="" width="200" />
         
           <div className="sidebar-category-container flex overflow-x-auto whitespace-nowrap justify-center">
-              <button onClick={() => setSideBarCategorySelect('1')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base dark:border-gray-500 dark:text-white whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '1' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
+              <button onClick={() => setSideBarCategorySelect('1')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '1' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
                   MUJER
               </button>
 
-              <button onClick={() => setSideBarCategorySelect('2')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base dark:border-gray-500 dark:text-white whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '2' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
+              <button onClick={() => setSideBarCategorySelect('2')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '2' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
                   HOMBRE
               </button>
 
-              <button onClick={() => setSideBarCategorySelect('3')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base dark:border-gray-500 dark:text-white whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '3' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
+              <button onClick={() => setSideBarCategorySelect('3')} className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${sideBarCategorySelect === '3' ? "border-2 border-b-8 rounded-t-lg border-zinc-400" : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"}`}>
                   NIÑOS
               </button>
           </div>
           
           
-          <div className="sidebar-subcategory-container">
-            <div className="sidebar-subcategory flex-row flex-wrap">
+          <div className={`sidebar-subcategory-container ${sideBarCategorySelect === '2' ? 'sidebar-sub-cont2' : (sideBarCategorySelect === '3' ? 'sidebar-sub-cont3' : "")}`}>
+            <div className="sidebar-subcategory">
               <div className="sidebar-subcategory-item">ABRIGOS | TRENCH</div>
               <div className="sidebar-subcategory-item">CHAQUETAS</div>
               <div className="sidebar-subcategory-item">BLAZERS</div>
@@ -94,6 +94,27 @@ export const HeaderComponent = () => {
               <div className="sidebar-subcategory-item">ZAPATOS</div>
               <div className="sidebar-subcategory-item">BOLSOS</div>
             </div>
+            <div className="sidebar-subcategory">
+              <div className="sidebar-subcategory-item">ABRIGOS | TRENCH</div>
+              <div className="sidebar-subcategory-item">CHAQUETAS</div>
+              <div className="sidebar-subcategory-item">BLAZERS</div>
+              <div className="sidebar-subcategory-item">CAMISAS</div>
+              <div className="sidebar-subcategory-item">CAMISETAS</div>
+              <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
+              <div className="sidebar-subcategory-item">PANTALONES</div>
+              <div className="sidebar-subcategory-item">JEANS</div>
+            </div>
+            <div className="sidebar-subcategory">
+              <div className="sidebar-subcategory-item">BLAZERS</div>
+              <div className="sidebar-subcategory-item">VESTIDOS | MONOS</div>
+              <div className="sidebar-subcategory-item">CAMISETAS</div>
+              <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
+              <div className="sidebar-subcategory-item">PANTALONES</div>
+              <div className="sidebar-subcategory-item">JEANS</div>
+            </div>
+
+
+
           </div>
 
 

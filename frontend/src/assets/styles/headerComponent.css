@@ -36,6 +36,9 @@ h1{
 .nav-search, .nav-icon{
     margin: 0 1em;
 } 
+.nav-icon{
+    cursor: pointer;
+}
 .nav-icon-right{
     display: flex;
     flex-wrap: wrap;
@@ -43,21 +46,37 @@ h1{
     justify-content: center;
 }
 
+.sidebar-bg{
+    z-index: 4;
+}
+.sidebar-body{
+    z-index: 5;
+}
 .sidebar-subcategory-container{
+    width: 100em;
     display: flex;
     transition: all 0.3s ease-out;
 }
+.sidebar-sub-cont2{
+    transform: translateX(-20em);
+}
+.sidebar-sub-cont3{
+    transform: translateX(-40em);
+}
 .sidebar-subcategory{
-    width: 100%;
+    height: auto;
+    width: 16em;
     margin: 2em;
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     justify-content: center;
-
+    align-items: flex-start;
+    transition: all 0.3s ease-out;
 }
 .sidebar-subcategory-item{
     /* border: 1px solid #0B1215; */
+    height: 1.8em;
     border: 1px solid #4b5563;
     border-radius: 5px;
     cursor: pointer;
