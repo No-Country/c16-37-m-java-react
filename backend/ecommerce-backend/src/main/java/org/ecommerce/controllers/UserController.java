@@ -1,5 +1,6 @@
 package org.ecommerce.controllers;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.ecommerce.models.dto.RegisteredUser;
 import org.ecommerce.models.dto.RegisteredUserDto;
@@ -19,7 +20,7 @@ public class UserController {
 
 //    @CrossOrigin(origins = "https://www.google.com")
     @PostMapping("/user")
-    public ResponseEntity<RegisteredUserDto> registerUser(@RequestBody RegisteredUser user) {
+    public ResponseEntity<RegisteredUserDto> registerUser(@RequestBody @Valid RegisteredUser user) {
         RegisteredUserDto registeredUser = authenticationService.registerOneUser(user);
         return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
     }

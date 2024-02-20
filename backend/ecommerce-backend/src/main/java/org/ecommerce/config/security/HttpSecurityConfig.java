@@ -32,9 +32,7 @@ public class HttpSecurityConfig {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(authorizeRequests -> {
-                    authorizeRequests.anyRequest().permitAll();
-                })
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().permitAll())
                 .build();
     }
 
