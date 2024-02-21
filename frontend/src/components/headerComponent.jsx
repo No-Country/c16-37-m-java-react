@@ -5,6 +5,7 @@ import iconUser from "../assets/img/icons/user.svg";
 import iconShoppingBag from "../assets/img/icons/shopping-bag2.svg";
 import iconCross from "../assets/img/icons/cross.svg";
 import { useState } from "react";
+import { Link } from 'react-router-dom'
 
 export const HeaderComponent = () => {
   
@@ -23,7 +24,9 @@ export const HeaderComponent = () => {
                   <img  className="icon-side-bar nav-icon"
                         src={iconMenuHamburger} alt="" width="32" 
                         onClick={() => setOpenSideBar(true)}/>
+                  <Link to='/'>
                   <img className="nav-logo" src={imgLogo} alt="" width="200" />
+                  </Link>
                   <form className="nav-search group relative" onSubmit={onSubmit}>
                     <svg
                       width="20"
@@ -46,8 +49,12 @@ export const HeaderComponent = () => {
                       />
                   </form>
                   <div className="nav-icon-right flex flex-row flex-wrap items-center">
+                      <Link to='/user'>
                       <img className="nav-icon mx-4" src={iconUser} alt="" width="32" />
+                      </Link>
+                      <Link to='/cart'>
                       <img className="nav-icon mx-4" src={iconShoppingBag} alt="" width="32" />
+                      </Link>
                   </div>
             </div>
         </div>
