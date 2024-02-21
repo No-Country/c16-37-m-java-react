@@ -22,7 +22,8 @@ public class CartItems {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Cart cart;
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Set<Producto> productSet = new HashSet<>();
 
     public CartItems() {

@@ -5,8 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.ecommerce.models.categorie.entity.Category;
+import org.ecommerce.models.entity.CartItems;
 import org.ecommerce.models.producto.dto.RegistrarProductoDTO;
 import org.ecommerce.models.producto.dto.UpdateProductDTO;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -31,6 +35,10 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+    @OneToMany(mappedBy = "productos")
+    private Set<CartItems> cartItemsSet = new HashSet<>();
+
+
 
     public Producto(RegistrarProductoDTO registrarProductoDTO) {
         this.activo = true;

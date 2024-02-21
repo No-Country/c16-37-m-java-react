@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Setter @Getter
@@ -23,8 +24,9 @@ public class Cart {
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private Set<CartItems> cartItemsSet;
 
-    private Cart(double totalPrice, User user) {
+    private Cart(double totalPrice, User user, Set<CartItems> cartItemsSet) {
         this.totalPrice = totalPrice;
         this.user = user;
+        this.cartItemsSet = cartItemsSet;
     }
 }

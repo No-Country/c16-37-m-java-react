@@ -17,9 +17,6 @@ public class CartDTO {
     private User user;
     private Set<CartItemsDTO> cartItemsSet;
 
-    public CartDTO() {
-    }
-
     private CartDTO(Cart cart){
         this.id = cart.getId();
         this.totalPrice = cart.getTotalPrice();
@@ -30,17 +27,4 @@ public class CartDTO {
                                 .collect(Collectors.toSet());
     }
 
-    public static CartDTO fromEntity(Cart cart) {
-        CartDTO dto = new CartDTO();
-            dto.setId(cart.getId());
-            dto.setTotalPrice(cart.getTotalPrice());
-            dto.setUser(cart.getUser());
-            dto.setCartItemsSet(cart.getCartItemsSet()
-                    .stream()
-                    .map(CartItemsDTO::new)
-                    .collect(Collectors.toSet())
-            );
-
-        return dto;
-    }
 }
