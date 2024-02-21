@@ -16,7 +16,7 @@ h1{
 
 .nav-container {
     position: relative;
-    height: 10em;
+    height: 7em;
 }
 .nav-container > img{
     margin: 0 auto;
@@ -25,7 +25,7 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1em 1vw;
+    margin: 1em 2em;
 } 
 .nav-search, .nav-icon{
     margin: 0 1em;
@@ -88,4 +88,13 @@ h1{
         position: absolute;
         bottom: 10%;
     }
+  }
+@media (max-width: 768px) {
+    .nav-container {
+        position: relative;
+        height: 10em;
+    }
+    .nav-icon-container{
+        margin: 1em 1vw;
+    } 
   }

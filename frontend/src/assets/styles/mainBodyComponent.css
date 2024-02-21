@@ -3,7 +3,7 @@
 } */
 .main-container{
     position: relative;
-    top: -10em;
+    top: -7em;
     z-index: -1;
 }
 .bg-container{
@@ -85,3 +85,9 @@
     -webkit-backdrop-filter: blur( 4px );
     color: black;
 }
+
+@media (max-width: 768px) {
+    .main-container{
+        top: -10em;
+    }
+  }
