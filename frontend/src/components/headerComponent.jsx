@@ -20,7 +20,7 @@ export const HeaderComponent = () => {
       <div className ="header-container">
         <div className="nav-container ">
             <div className ="nav-icon-container">
-                  <img  className="nav-icon"
+                  <img  className="icon-side-bar nav-icon"
                         src={iconMenuHamburger} alt="" width="32" 
                         onClick={() => setOpenSideBar(true)}/>
                   <img className="nav-logo" src={imgLogo} alt="" width="200" />
