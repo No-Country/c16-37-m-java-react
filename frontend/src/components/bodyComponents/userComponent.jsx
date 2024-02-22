@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
 import '../../assets/styles/userComponent.css'
+
 const UserComponent = () => {
   return (
     <div className='user-component flex flex-wrap gap-12 mx-auto'>
 
-      <div className="flex flex-1 flex-col justify-center px-6 lg:px-8 min-w-80">
+      <div className="user-login-container flex flex-1 flex-col justify-center px-6 lg:px-8 min-w-80">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 className="font-bold tracking-tight text-gray-900 mt-4">
             Ingresa a tu cuenta
@@ -61,11 +63,13 @@ const UserComponent = () => {
               ¿Necesitas una nueva cuenta?
             </a>
           </div>
-          <button
-            className="flex w-full justify-center bg-zinc-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-zinc-400 "
-            >
+          <Link to={'/register'}>
+            <button
+              className="flex w-full justify-center bg-zinc-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-zinc-400 "
+              >
             REGISTRATE
           </button>
+          </Link>
         </div>
       </div>
     </div>
