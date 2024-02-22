@@ -57,3 +57,11 @@ _backend/ecommerce-backend/src/main/java/org/ecommerce/models/categorie/dto/Cate
 kbackend/ecommerce-backend/src/main/java/org/ecommerce/models/categorie/dto/CategoryListWithProductsDTO.java,9\0\90edcddc1e25abfc893183340c9fb77368d6faef
 è
 _backend/ecommerce-backend/src/main/java/org/ecommerce/models/producto/dto/UpdateProductDTO.java,5\e\5e5940ddcaa70c7a0555a1c0afbf8bd55711e091
+á
+Wbackend/ecommerce-backend/src/main/java/org/ecommerce/models/dto/RegisteredUserDto.java,3\9\3925eb2455ed2ad596a8756a158fbdca5567535d
+Ñ
+Tbackend/ecommerce-backend/src/main/java/org/ecommerce/models/dto/RegisteredUser.java,9\7\9729631831b0136a0dc7d844b1aea9aea4152c2c
+ç
+]backend/ecommerce-backend/src/main/java/org/ecommerce/config/security/HttpSecurityConfig.java,d\3\d3f2d01e4afd82bb8ff72cfb9aec0d3b272b6d0a
+í
+bbackend/ecommerce-backend/src/main/java/org/ecommerce/config/security/JwtAuthenticationFilter.java,e\7\e748328ad9ce92f8b08053b131abf2a76c757eb1
