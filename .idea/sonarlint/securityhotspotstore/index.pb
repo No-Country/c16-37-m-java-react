@@ -71,3 +71,8 @@ m
 =src/main/java/org/ecommerce/models/dto/RegisteredUserDto.java,1\c\1c98591ccbb33f093572c0f3b65b6fe4e24602b6
 j
 :src/main/java/org/ecommerce/models/dto/RegisteredUser.java,6\5\6545c985862f1af4a15f2b0a3c910d48dc2681b5
+x
+Hsrc/main/java/org/ecommerce/config/security/JwtAuthenticationFilter.java,c\8\c880a9528db423100478fdb7d06d5ae78b27afa8
+:
+
+Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
