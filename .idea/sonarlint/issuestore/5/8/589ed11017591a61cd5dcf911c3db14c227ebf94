@@ -1,8 +1,0 @@
-
-[
-java:S1874"9Remove this use of "authorizeRequests"; it is deprecated.(¿Ğ±ûÿÿÿÿ8¸Œ»Ú1
-b
-java:S1128"@Remove this unused import 'org.springframework.http.HttpMethod'.(Ê¨Ä¡øÿÿÿÿ8³¹»Ú1
-
-java:S1128
-"qRemove this unused import 'org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter'.(÷ìïŠ8à¶ŸÚ1
