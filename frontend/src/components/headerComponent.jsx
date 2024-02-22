@@ -1,5 +1,5 @@
 import "../assets/styles/headerComponent.css";
-import imgLogo from "../assets/img/headerComponent/zara-logo.svg";
+import imgLogo from "../assets/img/headerComponent/kara-logo.svg";
 import iconMenuHamburger from "../assets/img/icons/menu-burger.svg";
 import iconUser from "../assets/img/icons/user.svg";
 import iconShoppingBag from "../assets/img/icons/shopping-bag2.svg";
