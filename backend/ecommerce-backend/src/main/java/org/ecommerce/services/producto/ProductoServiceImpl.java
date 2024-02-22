@@ -81,4 +81,9 @@ public class ProductoServiceImpl implements ProductoService {
         Producto producto = productoRepository.getReferenceById(id);
         producto.enableProduct();
     }
+
+    @Override
+    public Page<Producto> getProductsByName(String productName, Pageable pageable) {
+        return productoRepository.findByProductNameContains(productName, pageable);
+    }
 }

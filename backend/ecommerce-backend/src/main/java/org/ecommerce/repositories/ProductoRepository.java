@@ -10,4 +10,5 @@ import java.util.List;
 
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
     Page<Producto> findByActivoTrue(Pageable pageable);
+    Page<Producto> findByProductNameContains(String productName, Pageable pageable);
 }
