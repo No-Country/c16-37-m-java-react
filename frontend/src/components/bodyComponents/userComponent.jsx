@@ -1,7 +1,53 @@
 import { Link } from 'react-router-dom'
 import '../../assets/styles/userComponent.css'
+import { useState } from 'react';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const UserComponent = () => {
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+const handleError = (error) => {
+  if (error.response) {
+    console.log(error.response.data);
+
+  } else if (error.request) {
+    console.log(error.request);
+
+  } else {
+    console.log('Error', error.message);
+  }
+};
+
+const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  const user = {
+    username,
+    password,
+  };
+
+  try {
+    const response = await axios.post('http://localhost:8081/api/v1/login', user);
+    console.log(response.data);
+    await Swal.fire({
+      icon: 'success',
+      title: '¡Inicio de sesión exitoso!',
+      text: 'Has iniciado sesión correctamente.',
+    });
+    window.location.href = 'http://localhost:5173/';
+  } catch (error) {
+    handleError(error);
+    await Swal.fire({
+      icon: 'error',
+      title: '¡Error!',
+      text: 'Las credenciales proporcionadas son incorrectas.',
+    });
+  }
+};
+
   return (
     <div className='user-component flex flex-wrap gap-12 mx-auto'>
 
@@ -13,19 +59,20 @@ const UserComponent = () => {
         </div>
 
         <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm ">
-          <form className="user-login space-y-6" action="#" method="POST">
-            <div className="login-email">
+          <form className="user-login space-y-6" onSubmit={handleSubmit}>
+            <div className="login-username">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="username"
+                  name="username"
+                  type="username"
+                  autoComplete="username"
                   required
                   className="block w-full py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
-              <label htmlFor="email" className="login-label">EMAIL</label>
+              <label htmlFor="username" className="login-label">USERNAME</label>
             </div>
-
             <div className="login-pass">
               <input
                 id="password"
@@ -34,6 +81,8 @@ const UserComponent = () => {
                 autoComplete="current-password"
                 required
                 className="block w-full py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <label htmlFor="password" className="login-label">CONTRASEÑA</label>
             </div>
