@@ -74,4 +74,10 @@ public class ProductoController {
         productoService.enableProduct(id);
         return ResponseEntity.ok("El equipo ha sido activado correctamente");
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<Page<RespuestaListadoProductosDTO>> getProductsByName(@RequestParam(name = "productName") String productName, Pageable pageable){
+        Page<RespuestaListadoProductosDTO> productos = productoService.getProductsByName(productName, pageable).map(RespuestaListadoProductosDTO::new);
+        return ResponseEntity.ok(productos);
+    }
 }

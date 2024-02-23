@@ -1,0 +1,40 @@
+.register-component{
+    max-width: 992px;
+}
+.form-register label {
+    position: relative;
+    pointer-events: none;
+    padding-left: 1em;
+    transition: all 0.3s ease-out;
+    color: #171717;
+    font-size: 12px;
+}
+
+.form-register input{
+    border: none;
+    outline-color: gray;
+    border-bottom: 1px solid #171717;
+    padding-left: 1em;
+    transition: all 0.3s ease-out;  
+}
+    
+.form-register input:focus{
+    border-bottom: 1px solid gray;
+        
+}
+.form-register input:focus + label{
+    color: gray;
+}
+
+@media (max-width: 576px){
+    .register-component{
+        width: 97dvw;
+        margin: 0 auto;
+    }
+    .reg-is-user, .register-container{
+        padding: 1em;
+        border: 1px solid #171717;
+        border-radius: 5px;
+    /* agregar shadow box */
+    }
+}
