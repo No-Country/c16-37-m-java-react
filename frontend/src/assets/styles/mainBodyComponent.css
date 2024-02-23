@@ -3,7 +3,7 @@
 } */
 .main-container{
     position: relative;
-    top: -10em;
+    top: -7em;
     z-index: -1;
 }
 .bg-container{
@@ -55,6 +55,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 2em;
+    transform: translateY(-5em);
 }
 .category-card{
     flex-basis: 300px;
@@ -66,6 +67,8 @@
     position: relative;
     border-radius: 10px;
     cursor: pointer;
+    z-index: 1;
+
 }
 .category-card div{
     position: absolute;
@@ -82,3 +85,9 @@
     -webkit-backdrop-filter: blur( 4px );
     color: black;
 }
+
+@media (max-width: 768px) {
+    .main-container{
+        top: -10em;
+    }
+  }
