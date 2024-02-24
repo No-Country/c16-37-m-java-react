@@ -32,6 +32,7 @@ const handleSubmit = async (event) => {
   try {
     const response = await axios.post('http://localhost:8081/api/v1/login', user);
     console.log(response.data);
+    localStorage.setItem('jwt', response.data.jwtToken);
     await Swal.fire({
       icon: 'success',
       title: '¡Inicio de sesión exitoso!',
@@ -43,7 +44,7 @@ const handleSubmit = async (event) => {
     await Swal.fire({
       icon: 'error',
       title: '¡Error!',
-      text: 'Las credenciales proporcionadas son incorrectas.',
+      text: error.response.data.message,
     });
   }
 };
@@ -86,7 +87,6 @@ const handleSubmit = async (event) => {
               />
               <label htmlFor="password" className="login-label">CONTRASEÑA</label>
             </div>
-
             <div>
               <button
                 type="submit"
@@ -103,7 +103,6 @@ const handleSubmit = async (event) => {
           </div>
         </div>
       </div>
-
 
       <div className='user-registration flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8 min-w-80 my-12'>
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
