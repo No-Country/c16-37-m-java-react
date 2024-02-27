@@ -11,8 +11,8 @@ public record RespuestaListadoProductosDTO(
         Integer quantity,
         String image,
         Double specialPrice,
-        String category
-
+        String category,
+        String gender
 ) {
     public RespuestaListadoProductosDTO(Producto producto) {
         this(
@@ -24,7 +24,8 @@ public record RespuestaListadoProductosDTO(
                 producto.getQuantity(),
                 producto.getImage(),
                 producto.getSpecialPrice(),
-                producto.getCategory().getCategoryName()
+                producto.getCategory().getCategoryName(),
+                producto.getGender().toString()
         );
     }
 }

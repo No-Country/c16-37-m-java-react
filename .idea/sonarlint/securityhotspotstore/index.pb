@@ -76,3 +76,13 @@ Hsrc/main/java/org/ecommerce/config/security/JwtAuthenticationFilter.java,c\8\c
 :
 
 Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+p
+@src/main/java/org/ecommerce/models/producto/entity/Producto.java,b\2\b2467d13bda2dce5aa204c18317f55c802542fdc
+u
+Esrc/main/java/org/ecommerce/models/producto/dto/UpdateProductDTO.java,b\b\bbe1197d5d0cc7fd6eaa17ce0994f74de6146104
+Å
+Qsrc/main/java/org/ecommerce/models/producto/dto/RespuestaListadoProductosDTO.java,7\3\73f3948cd1dcc44d0d8e8065a35aaf5f2aad38b9
+y
+Isrc/main/java/org/ecommerce/models/producto/dto/RegistrarProductoDTO.java,8\4\84b0f8913aa2e10ad87fd6c4ec8cfde3eab9a5aa
+g
+7src/main/java/org/ecommerce/models/producto/Genero.java,5\9\5921c79df7eab5a5f914d976f29c5ae5ac1d0244
