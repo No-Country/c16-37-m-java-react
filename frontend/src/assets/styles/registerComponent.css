@@ -1,7 +1,7 @@
-.user-component{
+.register-component{
     max-width: 992px;
 }
-.user-login label {
+.form-register label {
     position: relative;
     pointer-events: none;
     padding-left: 1em;
@@ -10,7 +10,7 @@
     font-size: 12px;
 }
 
-.user-login input{
+.form-register input{
     border: none;
     outline-color: gray;
     border-bottom: 1px solid #171717;
@@ -18,22 +18,23 @@
     transition: all 0.3s ease-out;  
 }
     
-.user-login input:focus{
+.form-register input:focus{
     border-bottom: 1px solid gray;
         
 }
-.user-login input:focus + label{
+.form-register input:focus + label{
     color: gray;
 }
 
 @media (max-width: 576px){
-    .user-component{
+    .register-component{
         width: 97dvw;
         margin: 0 auto;
     }
-    .user-registration, .user-login-container{
+    .reg-is-user, .register-container{
         padding: 1em;
         border: 1px solid #171717;
         border-radius: 5px;
+    /* agregar shadow box */
     }
 }
