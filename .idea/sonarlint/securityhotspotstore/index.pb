@@ -138,3 +138,13 @@ S
 ,frontend/src/assets/styles/cartComponent.css,3\1\31c1e3c426fc9af2f04e1aebc0656562f3deec49
 E
 frontend/src/main.jsx,9\b\9b052d142f6592002016e71918483fea775227d4
+í
+bbackend/ecommerce-backend/src/main/java/org/ecommerce/config/security/JwtAuthenticationFilter.java,e\7\e748328ad9ce92f8b08053b131abf2a76c757eb1
+á
+Wbackend/ecommerce-backend/src/main/java/org/ecommerce/models/dto/RegisteredUserDto.java,3\9\3925eb2455ed2ad596a8756a158fbdca5567535d
+Ñ
+Tbackend/ecommerce-backend/src/main/java/org/ecommerce/models/dto/RegisteredUser.java,9\7\9729631831b0136a0dc7d844b1aea9aea4152c2c
+T
+$backend/ecommerce-backend/Dockerfile,e\c\ec921592fc2ea705eeb358e16be64c2981901d05
+ç
+]backend/ecommerce-backend/src/main/java/org/ecommerce/config/security/HttpSecurityConfig.java,d\3\d3f2d01e4afd82bb8ff72cfb9aec0d3b272b6d0a
