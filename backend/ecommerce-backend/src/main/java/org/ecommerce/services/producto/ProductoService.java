@@ -22,4 +22,5 @@ public interface ProductoService {
     void desableProduct(Long id);
 
     void enableProduct(Long id);
+    Page<Producto> getProductsByName(String productName, Pageable pageable);
 }

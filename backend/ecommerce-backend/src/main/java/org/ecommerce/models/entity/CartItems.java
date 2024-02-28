@@ -5,9 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.ecommerce.models.producto.entity.Producto;
 
-import java.util.HashSet;
-import java.util.*;
-
 @Entity
 @Getter @Setter
 @Table(name = "cart_items")
@@ -17,23 +14,23 @@ public class CartItems {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private double discount;
-    private double product_price;
+    private double productPrice;
     private int quantity;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Cart cart;
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Set<Producto> productSet = new HashSet<>();
+    private Producto product;
 
     public CartItems() {
     }
 
-    public CartItems(double discount, double product_price, int quantity, Cart cart, Set<Producto> productSet) {
+    public CartItems(double discount, double productPrice, int quantity, Cart cart, Producto product) {
         this.discount = discount;
-        this.product_price = product_price;
+        this.productPrice = productPrice;
         this.quantity = quantity;
         this.cart = cart;
-        this.productSet = productSet;
+        this.product = product;
     }
 }
