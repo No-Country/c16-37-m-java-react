@@ -3,6 +3,7 @@ package org.ecommerce.models.producto.dto;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 import org.ecommerce.models.categorie.dto.CreateCategoryDTO;
+import org.ecommerce.models.producto.Genero;
 
 public record RegistrarProductoDTO(
         @NotBlank
@@ -25,6 +26,8 @@ public record RegistrarProductoDTO(
         @Positive
         Double specialPrice,
         @NotBlank
-        String category
+        String category,
+        @NotNull
+        Genero gender
 ) {
 }

@@ -39,7 +39,7 @@ public class HttpSecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://example.com","http://127.0.0.1:5500"));
+        configuration.setAllowedOrigins(Arrays.asList("https://example.com","http://127.0.0.1:5500", "http://127.0.0.1:5173"));
         configuration.setAllowedMethods(Arrays.asList("*"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);

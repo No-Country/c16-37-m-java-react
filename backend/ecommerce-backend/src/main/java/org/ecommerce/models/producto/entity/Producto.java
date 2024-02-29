@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.ecommerce.models.categorie.entity.Category;
+import org.ecommerce.models.producto.Genero;
 import org.ecommerce.models.entity.CartItems;
 import org.ecommerce.models.producto.dto.RegistrarProductoDTO;
 import org.ecommerce.models.producto.dto.UpdateProductDTO;
@@ -31,7 +32,9 @@ public class Producto {
     private String image;
     @Column(name = "special_price")
     private Double specialPrice;
-    Boolean activo;
+    @Enumerated(EnumType.STRING)
+    private Genero gender;
+    private Boolean activo;
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -49,6 +52,7 @@ public class Producto {
         this.quantity = registrarProductoDTO.quantity();
         this.image = registrarProductoDTO.image();
         this.specialPrice = registrarProductoDTO.specialPrice();
+        this.gender = registrarProductoDTO.gender();
     }
 
     public void updateProduct(UpdateProductDTO updateProductDTO){
@@ -72,6 +76,9 @@ public class Producto {
         }
         if(updateProductDTO.specialPrice() != null){
             this.specialPrice = updateProductDTO.specialPrice();
+        }
+        if(updateProductDTO.gender() != null){
+            this.gender = updateProductDTO.gender();
         }
     }
 
