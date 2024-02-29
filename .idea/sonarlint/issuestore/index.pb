@@ -138,3 +138,14 @@ S
 ,frontend/src/assets/styles/cartComponent.css,3\1\31c1e3c426fc9af2f04e1aebc0656562f3deec49
 E
 frontend/src/main.jsx,9\b\9b052d142f6592002016e71918483fea775227d4
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+ç
+]backend/ecommerce-backend/src/main/java/org/ecommerce/config/security/HttpSecurityConfig.java,d\3\d3f2d01e4afd82bb8ff72cfb9aec0d3b272b6d0a
+è
+_backend/ecommerce-backend/src/main/java/org/ecommerce/controllers/AuthenticationController.java,1\c\1c634124ce3ebc2f78ea437e9b846395ccf858d0
+Ñ
+Tbackend/ecommerce-backend/src/main/java/org/ecommerce/models/dto/RegisteredUser.java,9\7\9729631831b0136a0dc7d844b1aea9aea4152c2c
+é
+^backend/ecommerce-backend/src/main/java/org/ecommerce/exceptions/InvalidPasswordException.java,3\d\3d4a5b4ebb7d338f7643ed1d0a1954e73b47e047
