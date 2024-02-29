@@ -13,10 +13,12 @@ const RegisterComponent = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repeatedPassword, setRepeatedPassword] = useState('');
+    const [errors, setErrors] = useState({}); // Nuevo estado para los errores
 
     const handleError = (error) => {
         if (error.response) {
             console.log(error.response.data);
+            setErrors(error.response.data.error);
 
         } else if (error.request) {
             console.log(error.request);
@@ -85,6 +87,8 @@ const RegisterComponent = () => {
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                             <label htmlFor="username" className="reg-label">NOMBRE DE USUARIO</label>
+                            {errors.username && <p className="  ml-4 text-red-500 text-xs italic mt-2">  {errors.username}</p>
+}
                         </div>
 
                         <div className="reg-firstName">
@@ -99,6 +103,7 @@ const RegisterComponent = () => {
                                 onChange={(e) => setFirstName(e.target.value)}
                             />
                             <label htmlFor="firstName" className="reg-label">NOMBRE</label>
+                            {errors.firstName && <p className="  ml-4 text-red-500 text-xs italic mt-2">  {errors.firstName}</p>}
                         </div>
 
                         <div className="reg-lastname">
@@ -113,6 +118,7 @@ const RegisterComponent = () => {
                                 onChange={(e) => setLastName(e.target.value)}
                             />
                             <label htmlFor="lastName" className="reg-label">APELLIDO</label>
+                            {errors.lastName && <p className="  ml-4 text-red-500 text-xs italic mt-2">  {errors.lastName}</p>}
                         </div>
 
                         <div className="reg-email">
@@ -127,6 +133,7 @@ const RegisterComponent = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <label htmlFor="email" className="reg-label">EMAIL</label>
+                            {errors.lastName && <p className="  ml-4 text-red-500 text-xs italic mt-2">  {errors.lastName}</p>}
                         </div>
 
                         <div className="reg-number">
@@ -141,6 +148,7 @@ const RegisterComponent = () => {
                                 onChange={(e) => setNumber(e.target.value)}
                             />
                             <label htmlFor="number" className="reg-label">NUMBER</label>
+                            {errors.number && <p className="  ml-4 text-red-500 text-xs italic mt-2">  {errors.number}</p>}
                         </div>
 
                         <div className="reg-pass">
@@ -155,6 +163,7 @@ const RegisterComponent = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                             <label htmlFor="password" className="reg-label">CONTRASEÑA</label>
+                            {errors.password && <p className="  ml-4 text-red-500 text-xs italic mt-2">  {errors.password}</p>}
                         </div>
 
                         <div className="reg-repeatedPassword">
@@ -169,6 +178,7 @@ const RegisterComponent = () => {
                                     onChange={(e) => setRepeatedPassword(e.target.value)}
                                 />
                             <label htmlFor="repeatedPassword" className="reg-label">REPETIR CONTRASEÑA</label>
+                            {errors.repeatedPassword && <p className="  ml-4 text-red-500 text-xs italic mt-2">  {errors.repeatedPassword}</p>}
                         </div>
 
                         <div>
