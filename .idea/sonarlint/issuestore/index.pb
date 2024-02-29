@@ -155,3 +155,11 @@ k
 ^backend/ecommerce-backend/src/main/java/org/ecommerce/services/auth/AuthenticationService.java,c\5\c55223c751d0482a0e6e03ba8d229857b23e1468
 ç
 ]backend/ecommerce-backend/src/main/java/org/ecommerce/config/security/HttpSecurityConfig.java,d\3\d3f2d01e4afd82bb8ff72cfb9aec0d3b272b6d0a
+í
+bbackend/ecommerce-backend/src/main/java/org/ecommerce/config/security/JwtAuthenticationFilter.java,e\7\e748328ad9ce92f8b08053b131abf2a76c757eb1
+T
+$backend/ecommerce-backend/Dockerfile,e\c\ec921592fc2ea705eeb358e16be64c2981901d05
+á
+Wbackend/ecommerce-backend/src/main/java/org/ecommerce/models/dto/RegisteredUserDto.java,3\9\3925eb2455ed2ad596a8756a158fbdca5567535d
+Ö
+Ubackend/ecommerce-backend/src/main/java/org/ecommerce/controllers/CartController.java,3\4\34ed0374fd162494e75fda2588ef61f3e70f118e

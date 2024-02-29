@@ -148,3 +148,5 @@ T
 $backend/ecommerce-backend/Dockerfile,e\c\ec921592fc2ea705eeb358e16be64c2981901d05
 ç
 ]backend/ecommerce-backend/src/main/java/org/ecommerce/config/security/HttpSecurityConfig.java,d\3\d3f2d01e4afd82bb8ff72cfb9aec0d3b272b6d0a
+Ö
+Ubackend/ecommerce-backend/src/main/java/org/ecommerce/controllers/CartController.java,3\4\34ed0374fd162494e75fda2588ef61f3e70f118e
