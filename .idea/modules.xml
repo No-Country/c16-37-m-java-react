@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/c16-37-m-java-react.iml" filepath="$PROJECT_DIR$/.idea/c16-37-m-java-react.iml" />
+        <module fileurl="file://$PROJECT_DIR$/.idea/ecommerce-c16-31-m-java-react.iml" filepath="$PROJECT_DIR$/.idea/ecommerce-c16-31-m-java-react.iml" />
+
     </modules>
   </component>
 </project>

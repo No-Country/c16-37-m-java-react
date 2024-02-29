@@ -5,6 +5,9 @@ import UserComponent from './bodyComponents/userComponent'
 import CartComponent from './bodyComponents/cartComponent'
 import RegisterComponent from './bodyComponents/registerComponent'
 import { Routes, Route } from 'react-router-dom'
+import CartOneComponent from './bodyComponents/cartComponents/cartOneComponent'
+import CartTwoComponent from './bodyComponents/cartComponents/cartTwoComponent'
+import CartThreeComponent from './bodyComponents/cartComponents/cartThreeComponent'
  
 export const BodyComponent = () => {
   return (
@@ -15,7 +18,12 @@ export const BodyComponent = () => {
         <Route path='/products' element= { <ProductsComponent /> } /> 
         <Route path='/user' element= { <UserComponent /> } /> 
         <Route path='/register' element= { <RegisterComponent /> } /> 
-        <Route path='/cart' element= { <CartComponent /> } /> 
+        <Route path='/cart' element= { <CartComponent /> }>
+        <Route path='/cart/' element={<CartOneComponent />} /> 
+            <Route path='/cart/*' element={<CartOneComponent />} /> 
+            <Route path='/cart/step-two' element={<CartTwoComponent />} /> 
+            <Route path='/cart/step-three' element={<CartThreeComponent />} /> 
+        </Route>
       </Routes>
     </>
     )
