@@ -38,7 +38,7 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
-    @OneToMany(mappedBy = "productos")
+    @OneToMany(mappedBy = "product")
     private Set<CartItems> cartItemsSet = new HashSet<>();
 
 
