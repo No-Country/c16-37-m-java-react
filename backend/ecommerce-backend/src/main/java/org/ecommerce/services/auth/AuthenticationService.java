@@ -12,6 +12,8 @@ import org.ecommerce.models.entity.JwtToken;
 import org.ecommerce.models.entity.User;
 import org.ecommerce.repositories.JwtTokenRepository;
 import org.ecommerce.services.UserService;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -74,11 +76,14 @@ public class AuthenticationService {
         jwtTokenRepository.save(token);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public User findLoggerUser() {
-        UsernamePasswordAuthenticationToken auth = (UsernamePasswordAuthenticationToken)SecurityContextHolder.getContext().getAuthentication();
-        String username = (String)auth.getPrincipal();
-        return userService.findByUsername(username).orElseThrow(()-> new ResourceNotFoundException("userp","username",username));
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || auth instanceof AnonymousAuthenticationToken) {
+            throw new AuthenticationCredentialsNotFoundException("El usuario no está autenticado.");
+        }
+        String username = auth.getName();
+        return userService.findByUsername(username).orElseThrow(()-> new ResourceNotFoundException("user","username",username));
     }
 
     public void logout(HttpServletRequest request) {

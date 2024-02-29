@@ -5,9 +5,15 @@ import iconUser from "../assets/img/icons/user.svg";
 import iconShoppingBag from "../assets/img/icons/shopping-bag2.svg";
 import iconCross from "../assets/img/icons/cross.svg";
 import { useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 export const HeaderComponent = () => {
+
+
+    const isAuthenticated = () => {
+        return localStorage.getItem('jwt') !== null;
+    };
+
   
   const onSubmit = (event) => {
     event.preventDefault()
@@ -25,7 +31,7 @@ export const HeaderComponent = () => {
                         src={iconMenuHamburger} alt="" width="32" 
                         onClick={() => setOpenSideBar(true)}/>
                   <Link to='/'>
-                  <img className="nav-logo" src={imgLogo} alt="" width="200" />
+                        <img className="nav-logo" src={imgLogo} alt="" width="200" />
                   </Link>
                   <form className="nav-search group relative" onSubmit={onSubmit}>
                     <svg
@@ -49,9 +55,9 @@ export const HeaderComponent = () => {
                       />
                   </form>
                   <div className="nav-icon-right flex flex-row flex-wrap items-center">
-                      <Link to='/user'>
-                      <img className="nav-icon mx-4" src={iconUser} alt="" width="32" />
-                      </Link>
+                    <Link to={isAuthenticated() ? '/profile' : '/user'}>
+                        <img className="nav-icon mx-4" src={iconUser} alt="" width="32" />
+                    </Link>
                       <Link to='/cart'>
                       <img className="nav-icon mx-4" src={iconShoppingBag} alt="" width="32" />
                       </Link>
@@ -119,8 +125,6 @@ export const HeaderComponent = () => {
               <div className="sidebar-subcategory-item">PANTALONES</div>
               <div className="sidebar-subcategory-item">JEANS</div>
             </div>
-
-
 
           </div>
 
