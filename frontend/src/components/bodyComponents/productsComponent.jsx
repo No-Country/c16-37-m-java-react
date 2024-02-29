@@ -1,16 +1,10 @@
 import "../../assets/styles/productsComponent.css";
 import iconCross from "../../assets/img/icons/cross.svg";
-import heart from "../../assets/img/icons/heart.svg";
-import heartFilled from "../../assets/img/icons/heart-filled.svg";
-import camisa1 from "../../assets/img/bodyComponent/products/camisa1.jpg";
-import camisa2 from "../../assets/img/bodyComponent/products/camisa2.jpg";
-import camisa3 from "../../assets/img/bodyComponent/products/camisa3.jpg";
-import camisa4 from "../../assets/img/bodyComponent/products/camisa4.jpg";
-import camisa5 from "../../assets/img/bodyComponent/products/camisa5.jpg";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsList } from "../../redux/actions";
 import ProductCard from "./ProductsCard";
+
 const ProductsComponent = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.productsToShow.content);
@@ -49,61 +43,8 @@ const ProductsComponent = () => {
       </div>
       <div className="products-grid">
         {/* generar componente */}
-        {/* <div className="product-item">
-          <img src={camisa1} alt="" />
-          <div className="product-item-footer">
-            <div className="product-item-footer-text">
-              <p>CAMISA CROP GABARDINA</p>
-              <p>79.990,00 ARS</p>
-            </div>
-            <img src={heart} alt="" width="20px" />
-          </div>
-        </div>
 
-        <div className="product-item">
-          <img src={camisa1} alt="" />
-          <div className="product-item-footer">
-            <div className="product-item-footer-text">
-              <p>CAMISA CROP GABARDINA</p>
-              <p>79.990,00 ARS</p>
-            </div>
-            <img src={heart} alt="" width="20px" />
-          </div>
-        </div>
-
-        <div className="product-item">
-          <img src={camisa1} alt="" />
-          <div className="product-item-footer">
-            <div className="product-item-footer-text">
-              <p>CAMISA CROP GABARDINA</p>
-              <p>79.990,00 ARS</p>
-            </div>
-            <img src={heart} alt="" width="20px" />
-          </div>
-        </div>
-
-        <div className="product-item">
-          <img src={camisa1} alt="" />
-          <div className="product-item-footer">
-            <div className="product-item-footer-text">
-              <p>CAMISA CROP GABARDINA</p>
-              <p>79.990,00 ARS</p>
-            </div>
-            <img src={heart} alt="" width="20px" />
-          </div>
-        </div>
-
-        <div className="product-item">
-          <img src={camisa1} alt="" />
-          <div className="product-item-footer">
-            <div className="product-item-footer-text">
-              <p>CAMISA CROP GABARDINA</p>
-              <p>79.990,00 ARS</p>
-            </div>
-            <img src={heart} alt="" width="20px" />
-          </div>
-        </div> */}
-        {
+      {
         products?.map((product, i) => {
           return (
             <ProductCard

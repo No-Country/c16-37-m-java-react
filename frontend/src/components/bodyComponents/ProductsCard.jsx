@@ -1,5 +1,6 @@
-import React from "react";
 import "../../assets/styles/productsComponent.css"
+import heart from "../../assets/img/icons/heart.svg";
+import heartFilled from "../../assets/img/icons/heart-filled.svg";
 
 const ProductCard = ({product, image, price}) => {
   return (
@@ -11,7 +12,7 @@ const ProductCard = ({product, image, price}) => {
             <p>{product}</p>
             <p>{price} ARS</p>
           </div>
-          <img src='' alt="" width="20px" />
+          <img src={heart} alt="" width="20px" />
         </div>
       </div>
     </div>

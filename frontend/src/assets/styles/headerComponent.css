@@ -27,10 +27,22 @@ h1{
     align-items: center;
     margin: 1em 2em;
 } 
-.nav-search, .nav-icon{
+form{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.nav-search{
     margin: 0 1em;
-} 
+}
+.nav-search button{
+    border: 1px solid #171717;
+    color: azure;
+    background-color: #171717;
+    padding: 0.5em;
+}
+
 .nav-icon{
+    margin: 0 1em;
     cursor: pointer;
 }
 .nav-icon-right{

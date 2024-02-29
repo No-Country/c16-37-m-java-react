@@ -4,24 +4,21 @@ import iconMenuHamburger from "../assets/img/icons/menu-burger.svg";
 import iconUser from "../assets/img/icons/user.svg";
 import iconShoppingBag from "../assets/img/icons/shopping-bag2.svg";
 import iconCross from "../assets/img/icons/cross.svg";
-import {useState} from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProductsSearch } from "../redux/actions";
 
 export const HeaderComponent = () => {
-
-
-    const isAuthenticated = () => {
-        return localStorage.getItem('jwt') !== null;
-    };
+  const isAuthenticated = () => {
+    return localStorage.getItem("jwt") !== null;
+  };
 
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const handleSearchInput = (event) => {
     setSearch(event.target.value);
   };
-
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -61,7 +58,7 @@ export const HeaderComponent = () => {
                             />
                         </svg>
                         <input
-                            className="w-80 focus:ring-2 focus:ring-gray-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
+                            className="w-80 focus:ring-2 focus:ring-gray-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
                             type="text"
                             aria-label="Filter projects"
                             placeholder="Tipo de prenda..."
@@ -87,67 +84,67 @@ export const HeaderComponent = () => {
             </div>
         </div>
 
-        <div className="sidebar">
-            <div
-                className={`${
-                    !openSideBar && "hidden"
-                } sidebar-bg bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm`}
-                onClick={() => setOpenSideBar(false)}
-            ></div>
+      <div className="sidebar">
+        <div
+          className={`${
+            !openSideBar && "hidden"
+          } sidebar-bg bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm`}
+          onClick={() => setOpenSideBar(false)}
+        ></div>
 
-            <div
-                className={`${
-                    openSideBar ? "w-80" : "w-0"
-                } sidebar-body bg-white min-h-screen fixed top-0 left-0 transition-all duration-300 overflow-hidden`}
+        <div
+          className={`${
+            openSideBar ? "w-80" : "w-0"
+          } sidebar-body bg-white min-h-screen fixed top-0 left-0 transition-all duration-300 overflow-hidden`}
+        >
+          <div className={`${!openSideBar && "hidden"} pt-3 relative`}>
+            <button
+              className="absolute top-0 right-0 h-16 w-16 "
+              onClick={() => setOpenSideBar(false)}
             >
-                <div className={`${!openSideBar && "hidden"} pt-3 relative`}>
-                    <button
-                        className="absolute top-0 right-0 h-16 w-16 "
-                        onClick={() => setOpenSideBar(false)}
-                    >
-                        <img src={iconCross} alt="" width={22}/>
-                    </button>
-                    <img
-                        className="sidebar-logo ml-8 mt-2 mb-8"
-                        src={imgLogo}
-                        alt=""
-                        width="200"
-                    />
+              <img src={iconCross} alt="" width={22} />
+            </button>
+            <img
+              className="sidebar-logo ml-8 mt-2 mb-8"
+              src={imgLogo}
+              alt=""
+              width="200"
+            />
 
-                    <div className="sidebar-category-container flex overflow-x-auto whitespace-nowrap justify-center">
-                        <button
-                            onClick={() => setSideBarCategorySelect("1")}
-                            className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${
-                                sideBarCategorySelect === "1"
-                                    ? "border-2 border-b-8 rounded-t-lg border-zinc-400"
-                                    : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"
-                            }`}
-                        >
-                            MUJER
-                        </button>
+            <div className="sidebar-category-container flex overflow-x-auto whitespace-nowrap justify-center">
+              <button
+                onClick={() => setSideBarCategorySelect("1")}
+                className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${
+                  sideBarCategorySelect === "1"
+                    ? "border-2 border-b-8 rounded-t-lg border-zinc-400"
+                    : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"
+                }`}
+              >
+                MUJER
+              </button>
 
-                        <button
-                            onClick={() => setSideBarCategorySelect("2")}
-                            className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${
-                                sideBarCategorySelect === "2"
-                                    ? "border-2 border-b-8 rounded-t-lg border-zinc-400"
-                                    : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"
-                            }`}
-                        >
-                            HOMBRE
-                        </button>
+              <button
+                onClick={() => setSideBarCategorySelect("2")}
+                className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${
+                  sideBarCategorySelect === "2"
+                    ? "border-2 border-b-8 rounded-t-lg border-zinc-400"
+                    : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"
+                }`}
+              >
+                HOMBRE
+              </button>
 
-                        <button
-                            onClick={() => setSideBarCategorySelect("3")}
-                            className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${
-                                sideBarCategorySelect === "3"
-                                    ? "border-2 border-b-8 rounded-t-lg border-zinc-400"
-                                    : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"
-                            }`}
-                        >
-                            NIÑOS
-                        </button>
-                    </div>
+              <button
+                onClick={() => setSideBarCategorySelect("3")}
+                className={`sidebar-category-item inline-flex transition-all duration-300 items-center h-12 px-4 py-2 text-sm text-center text-gray-800 border-gray-300 sm:text-base whitespace-nowrap focus:outline-none ${
+                  sideBarCategorySelect === "3"
+                    ? "border-2 border-b-8 rounded-t-lg border-zinc-400"
+                    : "bg-transparent border-b cursor-base hover:border-gray-900 dark:hover:border-gray-300"
+                }`}
+              >
+                NIÑOS
+              </button>
+            </div>
 
 
                     <div
@@ -191,7 +188,6 @@ export const HeaderComponent = () => {
                 </div>
             </div>
         </div>
-
 </>
 )
 
