@@ -29,8 +29,8 @@ public class Producto {
     @Column(name = "special_price")
     private Double specialPrice;
     @Enumerated(EnumType.STRING)
-    Genero gender;
-    Boolean activo;
+    private Genero gender;
+    private Boolean activo;
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -44,6 +44,7 @@ public class Producto {
         this.quantity = registrarProductoDTO.quantity();
         this.image = registrarProductoDTO.image();
         this.specialPrice = registrarProductoDTO.specialPrice();
+        this.gender = registrarProductoDTO.gender();
     }
 
     public void updateProduct(UpdateProductDTO updateProductDTO){
