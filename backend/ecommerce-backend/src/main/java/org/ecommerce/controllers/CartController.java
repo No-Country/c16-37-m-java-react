@@ -15,14 +15,14 @@ import java.util.List;
 public class CartController {
 
     @Autowired private CartService cartService;
-    @Autowired private
+   // @Autowired private
 
     @GetMapping("/carts")
     ResponseEntity<List<Cart>> getAllCarts() {
         List<Cart> carts = cartService.getAllCart();
         return ResponseEntity.ok(carts);
     }
-    @GetMapping("/carts")
+    @GetMapping("/carts/items")
     public ResponseEntity<List<CartItems>> getAllCartItems() {
         List<CartItems> cartItems= cartService.getAllCartItems();
         return ResponseEntity.ok(cartItems);
