@@ -32,9 +32,7 @@ const ProductsComponent = () => {
         <div className="filter--orderby">
           <strong>Ordenar por:</strong>
           <select className="select select-sm w-30 max-w-xs">
-            <option disabled selected>
-              Menor Precio
-            </option>
+            <option disabled>Menor Precio</option>
             <option>Mayor Precio</option>
             <option>Más relevante</option>
             <option>{`// New`}</option>

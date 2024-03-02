@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
+import '../../../assets/styles/cartTwoComponent.css'
 import building from '../../../assets/img/icons/building.svg'
 import mapMarker from '../../../assets/img/icons/map-marker.svg'
 import { useState } from 'react';
+import angle from '../../../assets/img/icons/angle-right.svg'
+import camisa1 from '../../../assets/img/bodyComponent/products/camisa1.jpg'
 
-const CartTwoComponent = () => {
+const CartTwoComponent = ({ stepHandler }) => {
 
     //estado y toogle de la entrega
     const [isSelectedLeft,  setIsSelectedLeft] = useState(true)
@@ -55,6 +58,9 @@ const CartTwoComponent = () => {
           setInputValue(event.target.value)
       }
 
+      //mostrar más
+      const [isShowingAll, setIsShowingAll] = useState(true)
+
       return (
         <>
         <h2>Entrega</h2>
@@ -96,9 +102,8 @@ const CartTwoComponent = () => {
                             {isSelectedLeft ? 
                             <p>Unicentro Bogotá - CII 127 #15</p> :
                             <>
-                                <p>Variable Dirección usuario</p>
                                 <div>
-                                    <span>Otra dirección: </span>
+                                    <span>Ingresa dirección: </span>
                                     <input 
                                     type="text"
                                     placeholder="Ingresa Dirección"
@@ -143,14 +148,39 @@ const CartTwoComponent = () => {
                 <div className="order-right order-summary">
                     <h3>Resumen de la compra</h3>
                     <div className='order-summary-list'>
-                        <p>(x Productos)</p>
+                        <header>
+                            <div><p>(x Productos)</p></div>
+                            <div
+                            className='showMore'
+                            onClick={()=>setIsShowingAll(!isShowingAll)}
+                            ><p>{isShowingAll ? 'Mostrar menos' : 'Mostrar más'}</p><img src={angle} className={isShowingAll ? 'order-summary-list-header-img-more' : 'order-summary-list-header-img-less'} width='15' /></div>
+
+                        </header>
                             {/* hacer map con este formato */}
-                        <div className='order-summary-item'>
-                            <div className='order-sum-item-img'></div>
-                            <div className='order-sum-item-title'></div>
-                            <div className='order-sum-item-description'></div>
-                            <div className='order-sum-item-price'></div>
+                        <div className={isShowingAll ? 'order-summary-item' : 'order-summary-item order-summary-item-hidden'}>
+                            <div className='order-sum-item-img'>
+                                <img src={camisa1} />
+                            </div>
+                            <div className='order-sum-item-title'><strong>Blusa Nido de A</strong>
+                                <p className='order-sum-item-description'>Talle: M</p>
+                                <p className='order-sum-item-description'>Cantidad: 1</p>
+                            </div>
+                            <div className='order-sum-item-price'><p>ar$ 79.990,00</p></div>
                         </div>
+
+                        <div className={isShowingAll ? 'order-summary-item' : 'order-summary-item order-summary-item-hidden'}>
+                            <div className='order-sum-item-img'>
+                                <img src={camisa1} />
+                            </div>
+                            <div className='order-sum-item-title'><strong>Blusa Nido de A</strong>
+                                <p className='order-sum-item-description'>Talle: M</p>
+                                <p className='order-sum-item-description'>Cantidad: 1</p>
+                            </div>
+                            <div className='order-sum-item-price'><p>ar$ 79.990,00</p></div>
+                        </div>
+
+
+
 
                     </div>
                     <div className='order-summary-container'>

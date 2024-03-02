@@ -8,7 +8,7 @@ import axios from "axios";
 const MainBodyCatComponent = () => {
   const loadProducts = () => {
     products.forEach(async (element) => {
-      await axios.post("http://localhost:8081/producto", element);
+      await axios.post("http://ecommerce.c3wco4c0ixns.us-east-2.rds.amazonaws.com/producto", element);
     });
   };
 

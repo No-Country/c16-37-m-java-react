@@ -42,7 +42,7 @@ const RegisterComponent = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8081/api/v1/user', user);
+            const response = await axios.post('http://ecommerce.c3wco4c0ixns.us-east-2.rds.amazonaws.com/api/v1/user', user);
             console.log(response.data);
             localStorage.setItem('jwt', response.data.jwtToken);
             await Swal.fire({
@@ -50,7 +50,8 @@ const RegisterComponent = () => {
                 title: '¡Inicio de sesión exitoso!',
                 text: 'Has iniciado sesión correctamente.',
             });
-            window.location.href = 'http://localhost:5173/';
+            window.location.href = './';
+            // window.location.href = 'http://localhost:5173/';
         } catch (error) {
             handleError(error);
             await Swal.fire({

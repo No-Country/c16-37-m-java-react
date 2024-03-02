@@ -1,4 +1,4 @@
-const CartThreeComponent = () => {
+const CartThreeComponent = ({ stepHandler }) => {
   return (
     <div className="cart-step3-container">
     <h2>Pago</h2>
