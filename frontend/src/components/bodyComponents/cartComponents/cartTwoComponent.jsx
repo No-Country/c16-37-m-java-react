@@ -4,9 +4,10 @@ import building from '../../../assets/img/icons/building.svg'
 import mapMarker from '../../../assets/img/icons/map-marker.svg'
 import { useState } from 'react';
 import angle from '../../../assets/img/icons/angle-right.svg'
+import { getStepsCart } from "../../../redux/actions";
 import camisa1 from '../../../assets/img/bodyComponent/products/camisa1.jpg'
 
-const CartTwoComponent = ({ stepHandler }) => {
+const CartTwoComponent = () => {
 
     //estado y toogle de la entrega
     const [isSelectedLeft,  setIsSelectedLeft] = useState(true)
@@ -79,6 +80,7 @@ const CartTwoComponent = ({ stepHandler }) => {
                                     <input type="checkbox" 
                                     className="accent-gray-500"
                                     checked={isSelectedLeft}
+                                    onChange={selectDeliveryLeft}
                                     />
                                     <div>
                                     <img src={building} alt="Tienda" width='25px' /><p><strong>Tienda Zara</strong></p><p>Gratis</p>
@@ -91,6 +93,7 @@ const CartTwoComponent = ({ stepHandler }) => {
                                 <input type="checkbox" 
                                 className="accent-gray-500"
                                 checked={isSelectedRight}
+                                onChange={selectDeliveryRight}
                                 />
                                 <div>
                                     <img src={mapMarker} alt="Casa" width='25px' /><p>Casa</p><p>$12000</p>
@@ -197,7 +200,7 @@ const CartTwoComponent = ({ stepHandler }) => {
                         </div>
                     </div>
                     <Link to='/cart/step-three'>
-                        <button>PAGAR</button>
+                        <button onClick={()=>getStepsCart(2)}>PAGAR</button>
                     </Link>
                 </div>
         

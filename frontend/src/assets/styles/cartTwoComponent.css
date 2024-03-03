@@ -16,13 +16,19 @@
 }
 .order-delivery-left,
 .order-delivery-right{
+    position: relative;
     width: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     border: 1px solid #171717;
     transition: all 0.3s ease-out;
     cursor: pointer;
+}
+.order-delivery-selector input{
+    position: absolute;
+    left: 2em;
 }
 .order-delivery-selected{
     font-weight: 600;

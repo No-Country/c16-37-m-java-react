@@ -1,0 +1,71 @@
+.cart-step3-container{
+    max-width: min(97dvw, 1024px);
+    margin: 0 auto;
+    display: flex;
+    gap: 1em;
+}
+.step3-column1,
+.step3-column2{
+    flex: 4;
+    min-width: 320px;
+
+}
+.step3-column3{
+    flex: 6;
+}
+.pay-method-container > div{
+    display: flex;
+}
+.pay-method-container div div{
+    position: relative;
+    width: 40%;
+    aspect-ratio: 6/5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #171717;
+    font-size: 0.6em;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+.pay-method-container div div input{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
+.pay-method-container-selected{
+    font-weight: 600;
+    border: 10px solid #17171780;
+    -webkit-box-shadow: inset 3px 3px 95px -16px rgba(23, 23, 23, 0.4);
+    -moz-box-shadow: inset 3px 3px 95px -16px rgba(23,23,23,0.4);
+    box-shadow: inset 3px 3px 95px -16px rgba(23,23,23,0.4);
+}
+.step3-column3 > *{
+    max-width: 450px;
+}
+.cart-three .form{
+}
+.cart-three .form-name,
+.cart-three .form-number{
+    min-width: 320px;
+    max-width: 450px;
+    flex: 2;
+}
+.cart-three .form-expire,
+.cart-three .form-cvc{
+    flex: 1;
+
+}
+
+@media (max-width: 768px) {
+    .cart-step3-container{
+        flex-wrap: wrap;
+    }   
+    .pay-method-container > div{
+        justify-content: center;
+    }
+}

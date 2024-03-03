@@ -1,8 +1,13 @@
-import { GET_PRODUCTS, GET_PRODUCTS_SEARCH } from "./actions";
+import { GET_PRODUCTS, GET_PRODUCTS_SEARCH, STEPS_CART  } from "./actions";
 
 const initialState = {
   allProducts: [],
   productsToShow: [],
+  stepsCartComplete: {
+    one: false,
+    two: false,
+    three: false,
+  },
   
 };
 const rootReducer = (state = initialState, action) => {
@@ -18,6 +23,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         allProducts: action.payload,
         productsToShow: action.payload,
+      };
+    case STEPS_CART :
+      return {
+        ...state,
+        stepsCartComplete: action.payload,
       };
     default:
       return {
