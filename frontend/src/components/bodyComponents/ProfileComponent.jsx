@@ -30,11 +30,10 @@ export const ProfileComponent = () => {
   }
 
   const handleLogout = async () => {
-    console.log("se hizo click")
     try {
       const token = localStorage.getItem('jwt');
       console.log(token)
-      const response = await axios.post('http://localhost:8081/api/v1/logout', {}, {
+      const response = await axios.post('http://54.242.61.33/api/v1/logout', {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -46,7 +45,8 @@ export const ProfileComponent = () => {
           title: '¡Cierre de sesión exitoso!',
           text: 'Has cerrado sesión correctamente.',
         });
-        window.location.href = 'http://localhost:5173/';
+        window.location.href = './';
+
       }
     } catch (error) {
       console.error('Error logging out:', error);

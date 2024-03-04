@@ -39,7 +39,7 @@ const handleSubmit = async (event) => {
       title: '¡Inicio de sesión exitoso!',
       text: 'Has iniciado sesión correctamente.',
     });
-    window.location.href = 'http://localhost:5173/';
+    window.location.href = './';
   } catch (error) {
     handleError(error);
     await Swal.fire({
