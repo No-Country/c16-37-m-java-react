@@ -50,7 +50,8 @@ const RegisterComponent = () => {
                 title: '¡Inicio de sesión exitoso!',
                 text: 'Has iniciado sesión correctamente.',
             });
-            window.location.href = 'http://localhost:5173/';
+            window.location.href = './';
+            // window.location.href = 'http://localhost:5173/';
         } catch (error) {
             handleError(error);
             await Swal.fire({

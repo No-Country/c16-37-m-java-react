@@ -1,5 +1,5 @@
 .user-component{
-    max-width: 992px;
+    max-width: 1024px;
 }
 .user-login label {
     position: relative;
@@ -37,7 +37,7 @@
         border-radius: 5px;
     }
 }
-/**/
+
 
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario {
@@ -51,40 +51,14 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(#B873FF, transparent);
+    background: linear-gradient(#1717178a, transparent);
     margin-bottom: 1.25rem;
 }
 
 .seccion-perfil-usuario .perfil-usuario-portada {
-    display: block;
     position: relative;
     width: 90%;
-    height: 17rem;
-    background-image: linear-gradient(45deg, #091358, #161f20);
-    border-radius: 0 0 20px 20px;
-
-    background-image: url('src/assets/img/icons/productsperfil.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-
-}
-
-.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    border: 0;
-    border-radius: 8px;
-    padding: 12px 25px;
-    background-color: rgba(0, 0, 0, .5);
-    color: #fff;
-    cursor: pointer;
-}
-
-.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
-    margin-right: 1rem;
+    height: 12rem;
 }
 
 .seccion-perfil-usuario .perfil-usuario-avatar {
@@ -109,30 +83,18 @@
     border-radius: 50%;
 }
 
-.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    border: 0;
-    background-color: #fff;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
 .seccion-perfil-usuario .perfil-usuario-body {
     width: 70%;
     position: relative;
     max-width: 750px;
 }
 
-.seccion-perfil-usuario .perfil-usuario-body .titulo {
-    display: block;
+.seccion-perfil-usuario .titulo {
     width: 100%;
     font-size: 1.75em;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem auto;
+    text-align: center;
+
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .texto {
@@ -140,11 +102,20 @@
     font-size: 0.95em;
 }
 
+.seccion-perfil-usuario button{
+    width: 60%;
+    margin: 2em auto;
+    border: 1px solid #171717;
+    color: azure;
+    background-color: #171717;
+    padding: 0.5em;
+}
 .seccion-perfil-usuario .perfil-usuario-footer,
 .seccion-perfil-usuario .perfil-usuario-bio {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    padding: 1.5rem 2rem;
+    max-width: 450px;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     background-color: #fff;
     border-radius: 15px;
@@ -171,49 +142,10 @@
     vertical-align: middle;
 }
 
-.seccion-perfil-usuario .redes-sociales {
-    position: absolute;
-    right: calc(0px - 50px - 1rem);
-    top: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.seccion-perfil-usuario .redes-sociales .boton-redes {
-    border: 0;
-    background-color: #fff;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: #fff;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    font-size: 1.3rem;
-}
-
-.seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
-    margin-top: .5rem;
-}
-
-.seccion-perfil-usuario .boton-redes.facebook {
-    background-color: #5955FF;
-}
-
-.seccion-perfil-usuario .boton-redes.twitter {
-    background-color: #35E1BF;
-}
-
-.seccion-perfil-usuario .boton-redes.instagram {
-    background: linear-gradient(45deg, #FF2DFD, #40A7FF);
-}
-
 /* adactacion a dispositivos */
 @media (max-width: 750px) {
     .seccion-perfil-usuario .lista-datos {
-        width: 100%;
+        width: 97%;
     }
 
     .seccion-perfil-usuario .perfil-usuario-portada,

@@ -27,7 +27,7 @@ h1{
     align-items: center;
     margin: 1em 2em;
 } 
-form{
+.nav-icon-container form{
     display: flex;
     flex-wrap: nowrap;
 }

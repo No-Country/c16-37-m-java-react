@@ -1,6 +1,7 @@
 .cart-container h2{
     text-align: center;
     font-weight: 700;
+    margin: 0;
 
 }
 .cart-container h3{
@@ -87,85 +88,7 @@
     width: 2rem;
     text-align: center;
 }
-.cart-step2-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5em;
-}
-.order-left{
-    max-width: min(400px, 100%);
-    min-width: 320px;
-}
-.order-delivery-selector{
-    display: flex;
-}
-.order-delivery-left,
-.order-delivery-right{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    border: 1px solid #171717;
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-}
-.order-delivery-selected{
-    font-weight: 600;
-    border: 2px solid #171717c4;
-    -webkit-box-shadow: inset 3px 3px 85px -26px rgba(23, 23, 23, 0.4);
-    -moz-box-shadow: inset 3px 3px 85px -26px rgba(23,23,23,0.4);
-    box-shadow: inset 3px 3px 85px -26px rgba(23,23,23,0.4);
-}
-.field-selected{
-    font-weight: 600;
-    border: 2px solid #171717;
-    background: #ddd;
-    background: -moz-linear-gradient(#ccc, #fff);
-    background: -ms-linear-gradient(#ccc, #fff);
-    background: -o-linear-gradient(#ccc, #fff);
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#fff));
-    background: -webkit-linear-gradient(#ccc, #fff);
-    background: linear-gradient(#ccc, #fff);
-    box-shadow: 
-      inset 0 2px 1px rgba(0,0,0,0.15),
-      0 2px 5px rgba(200,200,200,0.1);
-}
-.order-delivery-left div,
-.order-delivery-right div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 2em;
-}
-.order-delivery-left p,
-.order-delivery-right p{
-    font-size: 0.5rem;
-}
-.order-delivery-details{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 4em;
-    border: 1px solid #171717;
-    padding-left: 1rem;
-    font-size: 0.65rem;
-}
-.order-date div{
-    border: 1px solid #171717;
-    padding: 0.3rem 1rem;
-    transition: all 0.3s ease-out;
-}
-.order-date label{
-    font-size: 0.8rem;
-}
-.order-summary-container{
-    display: flex;
-}
-.order-summary-list,
-.order-summary-details,
-.order-summary-price{
-    border: 1px solid #171717;
-}
+
 
 
 @media (max-width: 768px){

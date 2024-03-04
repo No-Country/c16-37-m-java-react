@@ -1,15 +1,26 @@
 import { Outlet } from 'react-router-dom'
 import '../../assets/styles/cartComponent.css'
+import { useDispatch, useSelector } from "react-redux";
+import { getStepsCart } from "../../redux/actions";
+import { useEffect } from 'react';
+
 
 const CartComponent = () => {
+    const stepsCart = useSelector((state) => state.stepsCartComplete);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getStepsCart());
+    }, [dispatch]);
+    console.log(stepsCart);
+
   return (
     <section className='cart-container max-w-screen-lg mx-auto'>
         <div className='cart-steps max-w-80 mx-auto mb-8'>
             <div className="after:mt-4 after:block after:h-1 after:w-full after:rounded-lg after:bg-gray-200">
                 <ol className="grid grid-cols-3 text-sm font-medium text-gray-500">
-                <li className="relative flex justify-start text-gray-900">
-                    <span className="absolute -bottom-[1.75rem] start-0 rounded-full bg-gray-900 text-white">
-                    <svg
+                <li className={`relative flex justify-start  ${stepsCart.one ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
+                    <span className={stepsCart.one ? "absolute -bottom-[1.75rem] start-0 text-white rounded-full bg-gray-900 " : "absolute -bottom-[1.75rem] start-0 w-4 text-white text-center bg-gray-400 "}>
+                    {stepsCart.one ? <svg
                         className="h-5 w-5"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -20,7 +31,7 @@ const CartComponent = () => {
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                         clipRule="evenodd"
                         />
-                    </svg>
+                    </svg> : '1'}
                     </span>
 
                     <span className="hidden sm:block"> Cesta </span>
@@ -41,11 +52,9 @@ const CartComponent = () => {
                     </svg>
                 </li>
 
-                <li className="relative flex justify-center text-gray-900">
-                    <span
-                    className="absolute -bottom-[1.75rem] left-1/2 -translate-x-1/2 rounded-full bg-gray-900 text-white"
-                    >
-                    <svg
+                <li className={`relative flex justify-center  ${stepsCart.two ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
+                    <span className={`absolute -bottom-[1.75rem] left-1/2 -translate-x-1/2 ${stepsCart.two ? 'rounded-full bg-gray-900' : 'w-4 text-white text-center bg-gray-400'}`}  >
+                    {stepsCart.two ? <svg
                         className="h-5 w-5"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -56,7 +65,7 @@ const CartComponent = () => {
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                         clipRule="evenodd"
                         />
-                    </svg>
+                    </svg> : '2'}
                     </span>
 
                     <span className="hidden sm:block"> Entrega </span>
@@ -82,9 +91,9 @@ const CartComponent = () => {
                     </svg>
                 </li>
 
-                <li className="relative flex justify-end">
-                    <span className="absolute -bottom-[1.75rem] end-0 rounded-full bg-gray-600 text-white">
-                    <svg
+                <li className={`relative flex justify-end  ${stepsCart.three ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
+                    <span className={`absolute -bottom-[1.75rem] end-0 ${stepsCart.three ? 'rounded-full bg-gray-900' : 'w-4 text-white text-center bg-gray-400'}`}>
+                    {stepsCart.three ? <svg
                         className="h-5 w-5"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -95,7 +104,7 @@ const CartComponent = () => {
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                         clipRule="evenodd"
                         />
-                    </svg>
+                    </svg> : '3'}
                     </span>
 
                     <span className="hidden sm:block"> Pago </span>

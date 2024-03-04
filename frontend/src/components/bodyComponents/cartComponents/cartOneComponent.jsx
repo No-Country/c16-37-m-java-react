@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import camisa1 from '../../../assets/img/bodyComponent/products/camisa1.jpg'
 import { CounterComponent } from "./counterComponent"
+import { getStepsCart } from "../../../redux/actions";
+
 
 const CartOneComponent = () => {
   return (
@@ -70,7 +72,7 @@ const CartOneComponent = () => {
                 <p className="ml-4">Total: ar$ 300000</p>
                 <p className="ml-4 mb-4">Envío: gratis</p>
                 <Link to='/cart/step-two'>
-                <button>CONTINUAR</button>
+                <button onClick={()=>getStepsCart(1)}>CONTINUAR</button>
                 </Link>
             </div>
         </div>
