@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 import CartOneComponent from './bodyComponents/cartComponents/cartOneComponent'
 import CartTwoComponent from './bodyComponents/cartComponents/cartTwoComponent'
 import CartThreeComponent from './bodyComponents/cartComponents/cartThreeComponent'
+import { ProfileComponentCopy } from './bodyComponents/ProfileComponentCopy';
  
 export const BodyComponent = () => {
   return (
@@ -18,6 +19,7 @@ export const BodyComponent = () => {
         <Route path='/products' element= { <ProductsComponent /> } /> 
         <Route path='/user' element= { <UserComponent /> } /> 
         <Route path='/register' element= { <RegisterComponent /> } /> 
+        <Route path='/profile2' element= { <ProfileComponentCopy /> } /> 
         <Route path='/cart' element= { <CartComponent /> }>
         <Route path='/cart/' element={<CartOneComponent />} /> 
             <Route path='/cart/*' element={<CartOneComponent />} /> 

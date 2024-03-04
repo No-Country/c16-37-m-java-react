@@ -8,8 +8,33 @@ import "../../../assets/styles/cartThreeComponent.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getStepsCart } from "../../../redux/actions";
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+import axios from "axios";
 
 const CartThreeComponent = () => {
+
+  const [preferenceId, setPreferenceId] = useState(null)
+  initMercadoPago('48194053');
+  const createPreference = async () => {
+    try {
+      const response = await axios.post('http://localhost:5173/create_preference', {
+        title: "Kara Carrito",
+        quantity: 1,
+        price: 100,
+      });
+
+      const { id } = response.data;
+      return id;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const handleBuyMP = async () => {
+    const id = await createPreference();
+    if(id){
+      setPreferenceId(id);
+    }
+  }
   //estados de casillas de pago
   const [isVisa, setIsVisa] = useState(false);
   const [isMaster, setIsMaster] = useState(false);
@@ -269,7 +294,10 @@ const CartThreeComponent = () => {
                 </svg>
               </label>
             </form>
-
+                <div className="buy_MP">
+                    <button onClick={handleBuyMP}>Pagar con MercadoPago</button>
+                    {preferenceId && <Wallet initialization={{ preferenceId: preferenceId }} customization={{ texts:{ valueProp: 'smart_option'}}} />}
+                </div>
                 <div>
                     <Link to='/cart/step-three'>
                         <button onClick={()=>getStepsCart(3)}>PAGAR</button>

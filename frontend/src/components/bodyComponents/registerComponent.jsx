@@ -42,7 +42,7 @@ const RegisterComponent = () => {
         };
 
         try {
-            const response = await axios.post('http://ecommerce.c3wco4c0ixns.us-east-2.rds.amazonaws.com/api/v1/user', user);
+            const response = await axios.post('http://54.242.61.33/api/v1/user', user);
             console.log(response.data);
             localStorage.setItem('jwt', response.data.jwtToken);
             await Swal.fire({
