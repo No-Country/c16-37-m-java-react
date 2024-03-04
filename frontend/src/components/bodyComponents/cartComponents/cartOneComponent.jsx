@@ -64,10 +64,6 @@ const CartOneComponent = () => {
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
             <div className="cart-items-subtotal">
                 <header className="my-2 ml-4">(x Productos)</header>
@@ -77,9 +73,7 @@ const CartOneComponent = () => {
                 <button>CONTINUAR</button>
                 </Link>
             </div>
-
         </div>
-
     </div>
   )
 }

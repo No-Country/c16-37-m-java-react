@@ -10,7 +10,7 @@ export const ProfileComponent = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('jwt');
-        const response = await axios.post('http://localhost:8081/api/v1/profile', {}, {
+        const response = await axios.post('http://54.242.61.33/api/v1/profile', {}, {
           headers: {
             Authorization: `Bearer ${token}`
           }

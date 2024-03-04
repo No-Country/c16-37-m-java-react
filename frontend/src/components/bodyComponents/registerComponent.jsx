@@ -42,7 +42,7 @@ const RegisterComponent = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8081/api/v1/user', user);
+            const response = await axios.post('http://54.242.61.33/api/v1/user', user);
             console.log(response.data);
             localStorage.setItem('jwt', response.data.jwtToken);
             await Swal.fire({

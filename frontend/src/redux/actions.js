@@ -12,7 +12,7 @@ export const getProductsList = () => {
   return async function (dispatch) {
     try {
       const response = await axios.get(
-        "http://localhost:8081/producto/activos?size=150"
+        "http://54.242.61.33/producto/activos?size=150"
       );
       return dispatch({
         type: GET_PRODUCTS,
@@ -28,7 +28,7 @@ export const getProductsSearch = (productName) => {
   return async function (dispatch) {
     try {
       const response = await axios.get(
-        `http://localhost:8081/producto/search?productName=${productName}&size=150`
+        `http://54.242.61.33/producto/search?productName=${productName}&size=150`
       );
       return dispatch({
         type: GET_PRODUCTS_SEARCH,
