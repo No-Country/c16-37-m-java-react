@@ -31,7 +31,7 @@ const handleSubmit = async (event) => {
   };
 
   try {
-    const response = await axios.post('http://54.242.61.33/api/v1/login', user);
+    const response = await axios.post('https://www.thechris.tech/api/v1/login', user);
     console.log(response.data);
     localStorage.setItem('jwt', response.data.jwtToken);
     await Swal.fire({
@@ -39,7 +39,7 @@ const handleSubmit = async (event) => {
       title: '¡Inicio de sesión exitoso!',
       text: 'Has iniciado sesión correctamente.',
     });
-    window.location.href = 'http://localhost:5173/';
+    window.location.href = './';
   } catch (error) {
     handleError(error);
     await Swal.fire({

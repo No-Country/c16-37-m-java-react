@@ -9,7 +9,7 @@ export const ProfileComponent = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('jwt');
-        const response = await axios.post('http://ecommerce.c3wco4c0ixns.us-east-2.rds.amazonaws.com/api/v1/profile', {}, {
+        const response = await axios.post('https://www.thechris.tech/api/v1/profile', {}, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -26,6 +26,11 @@ export const ProfileComponent = () => {
 
   if (!user) {
     return <div>Loading...</div>;
+  }
+  
+  const signOff = () =>{
+    localStorage.removeItem('jwt');
+    window.location.href = './';
   }
 
 return (
@@ -50,6 +55,7 @@ return (
             <li><span className="font-bold">Teléfono:</span> {user.number}</li>
           </ul>
           <button>Cambiar contraseña</button>
+          <button onClick={signOff}>Cerrar Sesión</button>
         </div>
 
       </div>
