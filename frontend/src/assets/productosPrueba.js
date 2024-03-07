@@ -1,6 +1,6 @@
 export const products = [
     {
-      productName: "Camiseta de Dinosaurio",
+      productName: "Kamiseta de Dinosaurio",
       description:
         "Camiseta divertida con estampado de dinosaurio para Niños. Perfecta para jugar y divertirse.",
       price: 19.99,

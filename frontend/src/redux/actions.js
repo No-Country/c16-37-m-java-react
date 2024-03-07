@@ -1,10 +1,5 @@
 import axios from "axios";
 
-
-// export const cargarProductos = (products) => {
-  //   axios.post("http://localhost:8081/producto", products);
-  // };
-  
   export const getProductsList = () => {
     return async function (dispatch) {
     try {

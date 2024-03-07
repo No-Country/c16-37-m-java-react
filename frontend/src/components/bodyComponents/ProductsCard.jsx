@@ -12,12 +12,11 @@ const ProductCard = ({product, image, price}) => {
       setIsLiked(!isLiked)
     } else {
         Swal.fire({
+        title: `Diste "Me Gusta" al producto`,
         icon: 'warning',
-        title: `Le has dado "Me Gusta" al producto`,
         text: 'Necesitas ingresar a tu usuario.',
       });
     }
-    // se tiene que fijar si estás logueado
   }
 
   return (

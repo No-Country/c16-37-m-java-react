@@ -16,15 +16,15 @@ export const BodyComponent = () => {
       <Routes>
 
         <Route path='/' element={ <MainBodyComponent />} />
-        <Route path='/products' element= { <ProductsComponent /> } /> 
+        <Route path='/products/:search/:gender/:category' element= { <ProductsComponent /> } /> 
         <Route path='/user' element= { <UserComponent /> } /> 
         <Route path='/register' element= { <RegisterComponent /> } /> 
         <Route path='/profile' element= { <ProfileComponent /> } /> 
         <Route path='/cart' element= { <CartComponent /> }>
-        <Route path='/cart/' element={<CartOneComponent />} /> 
-            <Route path='/cart/*' element={<CartOneComponent />} /> 
-            <Route path='/cart/step-two' element={<CartTwoComponent />} /> 
-            <Route path='/cart/step-three' element={<CartThreeComponent />} /> 
+        <Route path='/cart/:steps' element={<CartOneComponent />} /> 
+            <Route path='/cart/*/:steps' element={<CartOneComponent />} /> 
+            <Route path='/cart/step-two:steps' element={<CartTwoComponent />} /> 
+            <Route path='/cart/step-three:steps' element={<CartThreeComponent />} /> 
         </Route>
       </Routes>
     </>
