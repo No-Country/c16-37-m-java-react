@@ -8,9 +8,9 @@ import { useEffect } from 'react';
 const CartComponent = () => {
     const stepsCart = useSelector((state) => state.stepsCartComplete);
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getStepsCart());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(getStepsCart());
+    // }, [dispatch]);
     console.log(stepsCart);
 
   return (

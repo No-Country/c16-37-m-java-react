@@ -31,7 +31,7 @@ const handleSubmit = async (event) => {
   };
 
   try {
-    const response = await axios.post('http://54.242.61.33/api/v1/login', user);
+    const response = await axios.post('https://www.thechris.tech/api/v1/login', user);
     console.log(response.data);
     localStorage.setItem('jwt', response.data.jwtToken);
     await Swal.fire({
