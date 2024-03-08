@@ -189,14 +189,6 @@ export const HeaderComponent = () => {
                               </Fragment>
                             );
                           })}
-
-                            <div className="sidebar-subcategory-item">CAMISETAS</div>
-                            <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
-                            <div className="sidebar-subcategory-item">PANTALONES</div>
-                            <div className="sidebar-subcategory-item">JEANS</div>
-                            <div className="sidebar-subcategory-item">FALDAS | SHORTS</div>
-                            <div className="sidebar-subcategory-item">ZAPATOS</div>
-                            <div className="sidebar-subcategory-item">BOLSOS</div>
                         </div>
                         <div className="sidebar-subcategory">
                             <a href='/products/all/Hombre/all'
@@ -217,13 +209,6 @@ export const HeaderComponent = () => {
                               </Fragment>
                             );
                           })}
-                            <div className="sidebar-subcategory-item">CHAQUETAS</div>
-                            <div className="sidebar-subcategory-item">BLAZERS</div>
-                            <div className="sidebar-subcategory-item">CAMISAS</div>
-                            <div className="sidebar-subcategory-item">CAMISETAS</div>
-                            <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
-                            <div className="sidebar-subcategory-item">PANTALONES</div>
-                            <div className="sidebar-subcategory-item">JEANS</div>
                         </div>
                         <div className="sidebar-subcategory">
                             <a href='/products/all/Niños/all'>
@@ -243,11 +228,6 @@ export const HeaderComponent = () => {
                               </Fragment>
                             );
                           })}
-                            <div className="sidebar-subcategory-item">VESTIDOS | MONOS</div>
-                            <div className="sidebar-subcategory-item">CAMISETAS</div>
-                            <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
-                            <div className="sidebar-subcategory-item">PANTALONES</div>
-                            <div className="sidebar-subcategory-item">JEANS</div>
                         </div>
 
                     </div>

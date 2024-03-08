@@ -18,9 +18,12 @@ const ProductsComponent = () => {
   // const productsRaw = useSelector((state) => state.productsToShow.content);
   // console.log(productsRaw)
   // const [products, setProducts] = useState()
-  const productsRaw = productsTest;
+  let productsRaw = productsTest;
   let products
   // desglosamiento de la BD
+  if(search !== 'all'){
+    productsRaw = productsRaw.filter(product => product.description.includes(search));
+  }
   if(gender === 'allGenders'){
     products = productsRaw
   } else {
@@ -79,8 +82,8 @@ const ProductsComponent = () => {
           >
             <option>Menor Precio</option>
             <option>Mayor Precio</option>
-            <option>Más relevante</option>
-            <option>{`// New`}</option>
+            <option disabled>Más relevante</option>
+            <option disabled>{`// New`}</option>
           </select>
         </div>
       </div>
@@ -92,6 +95,7 @@ const ProductsComponent = () => {
           return (
             <ProductCard
               key={i}
+              id={product.id}
               product={product.productName}
               image={product.image}
               price={product.price}
