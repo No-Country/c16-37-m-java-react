@@ -1,26 +1,20 @@
 import { Outlet } from 'react-router-dom'
 import '../../assets/styles/cartComponent.css'
-import { useDispatch, useSelector } from "react-redux";
-import { getStepsCart } from "../../redux/actions";
-import { useEffect } from 'react';
-
+import { useContext } from 'react';
+import StepsCartContext from '../../assets/context/StepsCartContext';
 
 const CartComponent = () => {
-    const stepsCart = useSelector((state) => state.stepsCartComplete);
-    const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch(getStepsCart());
-    // }, [dispatch]);
-    console.log(stepsCart);
+    const { stepsCartComplete} = useContext(StepsCartContext)
+    console.log(stepsCartComplete);
 
   return (
     <section className='cart-container max-w-screen-lg mx-auto'>
         <div className='cart-steps max-w-80 mx-auto mb-8'>
             <div className="after:mt-4 after:block after:h-1 after:w-full after:rounded-lg after:bg-gray-200">
                 <ol className="grid grid-cols-3 text-sm font-medium text-gray-500">
-                <li className={`relative flex justify-start  ${stepsCart.one ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
-                    <span className={stepsCart.one ? "absolute -bottom-[1.75rem] start-0 text-white rounded-full bg-gray-900 " : "absolute -bottom-[1.75rem] start-0 w-4 text-white text-center bg-gray-400 "}>
-                    {stepsCart.one ? <svg
+                <li className={`relative flex justify-start  ${!stepsCartComplete.one ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
+                    <span className={stepsCartComplete.one ? "absolute -bottom-[1.75rem] start-0 text-white rounded-full bg-gray-400 " : "absolute -bottom-[1.75rem] start-0 w-4 text-white text-center bg-gray-900 "}>
+                    {stepsCartComplete.one ? <svg
                         className="h-5 w-5"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -52,9 +46,9 @@ const CartComponent = () => {
                     </svg>
                 </li>
 
-                <li className={`relative flex justify-center  ${stepsCart.two ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
-                    <span className={`absolute -bottom-[1.75rem] left-1/2 -translate-x-1/2 ${stepsCart.two ? 'rounded-full bg-gray-900' : 'w-4 text-white text-center bg-gray-400'}`}  >
-                    {stepsCart.two ? <svg
+                <li className={`relative flex justify-center  ${!stepsCartComplete.two ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
+                    <span className={`absolute -bottom-[1.75rem] left-1/2 -translate-x-1/2 text-white ${stepsCartComplete.two ? 'rounded-full bg-gray-400' : 'w-4 text-center bg-gray-900'}`}  >
+                    {stepsCartComplete.two ? <svg
                         className="h-5 w-5"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -91,9 +85,9 @@ const CartComponent = () => {
                     </svg>
                 </li>
 
-                <li className={`relative flex justify-end  ${stepsCart.three ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
-                    <span className={`absolute -bottom-[1.75rem] end-0 ${stepsCart.three ? 'rounded-full bg-gray-900' : 'w-4 text-white text-center bg-gray-400'}`}>
-                    {stepsCart.three ? <svg
+                <li className={`relative flex justify-end  ${!stepsCartComplete.three ? 'text-gray-900 font-bold' : 'text-gray-400'}`}>
+                    <span className={`absolute -bottom-[1.75rem] end-0 text-white ${stepsCartComplete.three ? 'rounded-full bg-gray-400' : 'w-4 text-center bg-gray-900'}`}>
+                    {stepsCartComplete.three ? <svg
                         className="h-5 w-5"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"

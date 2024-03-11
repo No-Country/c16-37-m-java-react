@@ -1,14 +1,15 @@
-import { Link } from 'react-router-dom';
 import '../../../assets/styles/cartTwoComponent.css'
+import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import StepsCartContext from '../../../assets/context/StepsCartContext';
+import angle from '../../../assets/img/icons/angle-right.svg'
 import building from '../../../assets/img/icons/building.svg'
 import mapMarker from '../../../assets/img/icons/map-marker.svg'
-import { useState } from 'react';
-import angle from '../../../assets/img/icons/angle-right.svg'
-import { getStepsCart } from "../../../redux/actions";
-import camisa1 from '../../../assets/img/bodyComponent/products/camisa1.jpg'
+
+
 
 const CartTwoComponent = () => {
-
+    const { handleStepsCart } = useContext(StepsCartContext);
     //estado y toogle de la entrega
     const [isSelectedLeft,  setIsSelectedLeft] = useState(true)
     const [isSelectedRight, setIsSelectedRight] = useState(false) 
@@ -62,6 +63,20 @@ const CartTwoComponent = () => {
       //mostrar más
       const [isShowingAll, setIsShowingAll] = useState(true)
 
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const [cartTotal, setCartTotal] = useState(0);
+  
+      const calculateTotal = () => {
+          const total = cartItems.reduce((accumulator, product) => {
+              return accumulator + parseFloat(product.price);
+          }, 0);
+          setCartTotal(total.toFixed(2));
+      };
+  
+      useEffect(() => {
+          calculateTotal();
+      }, []);
+
       return (
         <>
         <h2>Entrega</h2>
@@ -83,7 +98,7 @@ const CartTwoComponent = () => {
                                     onChange={selectDeliveryLeft}
                                     />
                                     <div>
-                                    <img src={building} alt="Tienda" width='25px' /><p><strong>Tienda Zara</strong></p><p>Gratis</p>
+                                    <img src={building} alt="Tienda" width='25px' /><p><strong>Tienda Kara</strong></p><p>Gratis</p>
                                     </div>
                             </div>
                             <div 
@@ -96,14 +111,14 @@ const CartTwoComponent = () => {
                                 onChange={selectDeliveryRight}
                                 />
                                 <div>
-                                    <img src={mapMarker} alt="Casa" width='25px' /><p>Casa</p><p>$12000</p>
+                                    <img src={mapMarker} alt="Casa" width='25px' /><p>Casa</p><p>50 ARS</p>
                                 </div>
                             </div>
                             
                         </div>
                         <div className='order-delivery-details'>
                             {isSelectedLeft ? 
-                            <p>Unicentro Bogotá - CII 127 #15</p> :
+                            <p>Alto Rosario Shopping</p> :
                             <>
                                 <div>
                                     <span>Ingresa dirección: </span>
@@ -152,35 +167,34 @@ const CartTwoComponent = () => {
                     <h3>Resumen de la compra</h3>
                     <div className='order-summary-list'>
                         <header>
-                            <div><p>(x Productos)</p></div>
+                            <div><p>({cartItems.length} Productos)</p></div>
                             <div
                             className='showMore'
                             onClick={()=>setIsShowingAll(!isShowingAll)}
                             ><p>{isShowingAll ? 'Mostrar menos' : 'Mostrar más'}</p><img src={angle} className={isShowingAll ? 'order-summary-list-header-img-more' : 'order-summary-list-header-img-less'} width='15' /></div>
 
                         </header>
-                            {/* hacer map con este formato */}
-                        <div className={isShowingAll ? 'order-summary-item' : 'order-summary-item order-summary-item-hidden'}>
-                            <div className='order-sum-item-img'>
-                                <img src={camisa1} />
-                            </div>
-                            <div className='order-sum-item-title'><strong>Blusa Nido de A</strong>
-                                <p className='order-sum-item-description'>Talle: M</p>
-                                <p className='order-sum-item-description'>Cantidad: 1</p>
-                            </div>
-                            <div className='order-sum-item-price'><p>ar$ 79.990,00</p></div>
-                        </div>
 
-                        <div className={isShowingAll ? 'order-summary-item' : 'order-summary-item order-summary-item-hidden'}>
-                            <div className='order-sum-item-img'>
-                                <img src={camisa1} />
+
+                            {/* contendor del map */}
+                            <div className={isShowingAll ? 'order-summary-item' : 'order-summary-item order-summary-item-hidden'}>
+                                {cartItems?.map((product) => (
+                                    <div className='cart-item' key={product.id}>
+                                        <div className='order-sum-item-img'>
+                                            {/* Utiliza la imagen del producto del array cartItems */}
+                                            <img src={product.image} alt={product.name} />
+                                        </div>
+                                        <div className='order-sum-item-title'>
+                                            <strong>{product.name}</strong>
+                                            <p className='order-sum-item-description'>{`Talle: ${product.size}`}</p>
+                                            <p className='order-sum-item-description'>{`Cantidad: ${product.quantity}`}</p>
+                                        </div>
+                                        <div className='order-sum-item-price'>
+                                            <p>{`ar$ ${product.price.toFixed(2)}`}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                            <div className='order-sum-item-title'><strong>Blusa Nido de A</strong>
-                                <p className='order-sum-item-description'>Talle: M</p>
-                                <p className='order-sum-item-description'>Cantidad: 1</p>
-                            </div>
-                            <div className='order-sum-item-price'><p>ar$ 79.990,00</p></div>
-                        </div>
 
 
 
@@ -189,18 +203,18 @@ const CartTwoComponent = () => {
                     <div className='order-summary-container'>
                         <div className='order-summary-details'>
                             <p><strong>Entrega: </strong>{isSelectedLeft ?
-                                                        'Unicentro Bogotá - CII 127 #15' : 
-                                                        (inputValue ? inputValue : 'userAddress')
+                                                        'Kara Alto Rosario Shopping' : 
+                                                        (inputValue ? inputValue : '')
                                                     }</p>
                             <p><strong>Fecha: </strong>{todayChecked ? todayString : tomorrowString}</p>
                         </div>
                         <div className='order-summary-price'>
-                            <p><strong>Envío: </strong>Variable de precio</p>
-                            <p><strong>TOTAL: </strong>Variable de Total</p>
+                            <p><strong>Envío: </strong>{isSelectedLeft ? 'Gratis' : '50 ARS'}</p>
+                            <p><strong>TOTAL: </strong>{isSelectedLeft ? cartTotal : (+cartTotal+50)}ARS</p>
                         </div>
                     </div>
                     <Link to='/cart/step-three'>
-                        <button onClick={()=>getStepsCart(2)}>PAGAR</button>
+                        <button onClick={()=>handleStepsCart(2)}>PAGAR</button>
                     </Link>
                 </div>
         

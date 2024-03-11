@@ -109,9 +109,8 @@ const handleSubmit = async (event) => {
       <div className='user-registration flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8 min-w-80 my-12'>
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
           <div className="text-sm mb-4">
-            <a href="#" className="font-bold text-zinc-900 hover:text-zinc-400 ">
-              ¿Necesitas una nueva cuenta?
-            </a>
+            <p className="font-bold text-zinc-900">
+              ¿Necesitas una nueva cuenta?</p>
           </div>
           <Link to={'/register'}>
             <button

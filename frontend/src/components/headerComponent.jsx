@@ -4,10 +4,11 @@ import iconMenuHamburger from "../assets/img/icons/menu-burger.svg";
 import iconUser from "../assets/img/icons/user.svg";
 import iconShoppingBag from "../assets/img/icons/shopping-bag2.svg";
 import iconCross from "../assets/img/icons/cross.svg";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProductsSearch } from "../redux/actions";
+import { productsTest } from "../assets/json/products";
 
 export const HeaderComponent = () => {
   const isAuthenticated = () => {
@@ -21,11 +22,31 @@ export const HeaderComponent = () => {
   };
 
     const onSubmit = (event) => {
-        event.preventDefault();
-        dispatch(getProductsSearch(search));
+      event.preventDefault();
+      const search2 = search.trim()
+      if (search2.length === 0) {
+        return; 
+      }
+
+          if (window.location.pathname !== '/products') {
+          window.location.href = `/products/${search}/allGenders/all`;
+          }
+          dispatch(getProductsSearch(search));
     };
     const [openSideBar, setOpenSideBar] = useState(false);
     const [sideBarCategorySelect, setSideBarCategorySelect] = useState("1");
+
+    const getUniqueCategories = (products) => {
+      const categories = products.map(product => product.category);
+      return Array.from(new Set(categories));
+    };
+    const productsMujer = productsTest.filter(product => product.gender.includes('Mujer'));
+    const productsHombre = productsTest.filter(product => product.gender.includes('Hombre'));
+    const productsNiños = productsTest.filter(product => product.gender.includes('Niños'));
+    const productsMujerCat = getUniqueCategories(productsMujer);
+    const productsHombreCat = getUniqueCategories(productsHombre);
+    const productsNiñosCat = getUniqueCategories(productsNiños);
+
     return (
         <>
         <h1 className="text-3xl font-bold underline">No Country - c16-31-m-java-react</h1>
@@ -71,7 +92,7 @@ export const HeaderComponent = () => {
                         <Link to={isAuthenticated() ? '/profile' : '/user'}>
                             <img className="nav-icon mx-4" src={iconUser} alt="" width="32"/>
                         </Link>
-                        <Link to="/cart">
+                        <Link to={isAuthenticated() ? '/cart' : '/user'}>
                             <img
                                 className="nav-icon mx-4"
                                 src={iconShoppingBag}
@@ -150,36 +171,63 @@ export const HeaderComponent = () => {
                     <div
                         className={`sidebar-subcategory-container ${sideBarCategorySelect === '2' ? 'sidebar-sub-cont2' : (sideBarCategorySelect === '3' ? 'sidebar-sub-cont3' : "")}`}>
                         <div className="sidebar-subcategory">
-                            <div className="sidebar-subcategory-item">ABRIGOS | TRENCH</div>
-                            <div className="sidebar-subcategory-item">CHAQUETAS</div>
-                            <div className="sidebar-subcategory-item">BLAZERS</div>
-                            <div className="sidebar-subcategory-item">VESTIDOS | MONOS</div>
-                            <div className="sidebar-subcategory-item">CAMISAS | TOPS</div>
-                            <div className="sidebar-subcategory-item">CAMISETAS</div>
-                            <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
-                            <div className="sidebar-subcategory-item">PANTALONES</div>
-                            <div className="sidebar-subcategory-item">JEANS</div>
-                            <div className="sidebar-subcategory-item">FALDAS | SHORTS</div>
-                            <div className="sidebar-subcategory-item">ZAPATOS</div>
-                            <div className="sidebar-subcategory-item">BOLSOS</div>
+                            <a href='/products/all/Mujer/all'>
+                              <div className="sidebar-subcategory-item"
+                              key='mujer-all'
+                              >TODOS</div>
+                            </a>
+                             
+                            {productsMujerCat?.map((category) => {
+                            return (
+                              <Fragment key={`mujer-${category}`}>
+                                <a href={`/products/all/Mujer/${category}`}>
+                                <div className="sidebar-subcategory-item"
+                                  key={`mujer-${category}`}
+                                >
+                                  {category}</div>
+                                </a>
+                              </Fragment>
+                            );
+                          })}
                         </div>
                         <div className="sidebar-subcategory">
-                            <div className="sidebar-subcategory-item">ABRIGOS | TRENCH</div>
-                            <div className="sidebar-subcategory-item">CHAQUETAS</div>
-                            <div className="sidebar-subcategory-item">BLAZERS</div>
-                            <div className="sidebar-subcategory-item">CAMISAS</div>
-                            <div className="sidebar-subcategory-item">CAMISETAS</div>
-                            <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
-                            <div className="sidebar-subcategory-item">PANTALONES</div>
-                            <div className="sidebar-subcategory-item">JEANS</div>
+                            <a href='/products/all/Hombre/all'
+                            key='hombre-all'
+                            >
+                              <div className="sidebar-subcategory-item">TODOS</div>
+                            </a>
+                            
+                             
+                            {productsHombreCat?.map((category) => {
+                            return (
+                              <Fragment key={`hombre-${category}`}>
+                                <a href={`/products/all/Hombre/${category}`}>
+                                <div className="sidebar-subcategory-item"
+                                key={`hombre-${category}`}
+                                >{category}</div>
+                                </a>
+                              </Fragment>
+                            );
+                          })}
                         </div>
                         <div className="sidebar-subcategory">
-                            <div className="sidebar-subcategory-item">BLAZERS</div>
-                            <div className="sidebar-subcategory-item">VESTIDOS | MONOS</div>
-                            <div className="sidebar-subcategory-item">CAMISETAS</div>
-                            <div className="sidebar-subcategory-item">PUNTO | BUZOS</div>
-                            <div className="sidebar-subcategory-item">PANTALONES</div>
-                            <div className="sidebar-subcategory-item">JEANS</div>
+                            <a href='/products/all/Niños/all'>
+                              <div className="sidebar-subcategory-item"
+                              key='niños-all'
+                              >TODOS</div>
+                            </a>
+                             
+                            {productsNiñosCat?.map((category) => {
+                            return (
+                              <Fragment key={`niños-${category}`}>
+                                <a href={`/products/all/Niños/${category}`}>
+                                <div className="sidebar-subcategory-item"
+                                key={`niños-${category}`}
+                                >{category}</div>
+                                </a>
+                              </Fragment>
+                            );
+                          })}
                         </div>
 
                     </div>
