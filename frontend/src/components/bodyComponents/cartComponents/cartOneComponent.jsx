@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 // import { CounterComponent } from "./counterComponent"
 import trash from "../../../assets/img/icons/trash.svg"
-import carritoVacio from "../../../assets/img/bodyComponent/carrito-vacio.jpg"
+import carritoVacio from "../../../assets/img/bodyComponent/carrito-vacio.webp"
 import Swal from 'sweetalert2';
 import { useContext, useEffect, useState } from "react";
 import StepsCartContext from "../../../assets/context/StepsCartContext";

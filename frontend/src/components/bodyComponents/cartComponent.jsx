@@ -3,8 +3,6 @@ import '../../assets/styles/cartComponent.css'
 import { useContext } from 'react';
 import StepsCartContext from '../../assets/context/StepsCartContext';
 
-
-
 const CartComponent = () => {
     const { stepsCartComplete} = useContext(StepsCartContext)
     console.log(stepsCartComplete);

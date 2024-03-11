@@ -1,6 +1,6 @@
-import filterCatWomen from "../../assets/img/bodyComponent/category-women.jpg";
-import filterCatMen from "../../assets/img/bodyComponent/category-men.jpg";
-import filterCatKids from "../../assets/img/bodyComponent/category-kids.jpg";
+import filterCatWomen from "../../assets/img/bodyComponent/category-women.webp";
+import filterCatMen from "../../assets/img/bodyComponent/category-men.webp";
+import filterCatKids from "../../assets/img/bodyComponent/category-kids.webp";
 import { Link } from "react-router-dom";
 // import { products } from "../../assets/productosPrueba";
 // import axios from "axios";
