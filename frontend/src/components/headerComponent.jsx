@@ -92,7 +92,7 @@ export const HeaderComponent = () => {
                         <Link to={isAuthenticated() ? '/profile' : '/user'}>
                             <img className="nav-icon mx-4" src={iconUser} alt="" width="32"/>
                         </Link>
-                        <Link to="/cart">
+                        <Link to={isAuthenticated() ? '/cart' : '/user'}>
                             <img
                                 className="nav-icon mx-4"
                                 src={iconShoppingBag}

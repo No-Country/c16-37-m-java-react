@@ -10,6 +10,7 @@ import CartOneComponent from './bodyComponents/cartComponents/cartOneComponent'
 import CartTwoComponent from './bodyComponents/cartComponents/cartTwoComponent'
 import CartThreeComponent from './bodyComponents/cartComponents/cartThreeComponent'
 import { ProfileComponent } from './bodyComponents/ProfileComponent';
+import { StepsCartProvider } from '../assets/context/StepsCartContext'
  
 export const BodyComponent = () => {
   return (
@@ -22,7 +23,7 @@ export const BodyComponent = () => {
         <Route path='/user' element= { <UserComponent /> } /> 
         <Route path='/register' element= { <RegisterComponent /> } /> 
         <Route path='/profile' element= { <ProfileComponent /> } /> 
-        <Route path='/cart' element= { <CartComponent /> }>
+        <Route path='/cart' element= { <StepsCartProvider><CartComponent /></StepsCartProvider> }>
         <Route path='/cart' element={<CartOneComponent />} /> 
             <Route path='/cart/*' element={<CartOneComponent />} /> 
             <Route path='/cart/step-two' element={<CartTwoComponent />} /> 

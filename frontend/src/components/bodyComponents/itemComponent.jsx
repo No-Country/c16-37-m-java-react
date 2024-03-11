@@ -31,7 +31,7 @@ const ItemComponent = () => {
  
     // Agregar el nuevo elemento al carrito
   const addCart = () => {
-    if(  localStorage.getItem('jwt')){
+    // if(  localStorage.getItem('jwt')){
       const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
       const updatedCart = [...existingCart, { id: selectedItem.id, productName: selectedItem.productName, image: selectedItem.image, price: selectedItem.price, size: size , quantity: 1}];
       localStorage.setItem('cart', JSON.stringify(updatedCart));
@@ -41,13 +41,13 @@ const ItemComponent = () => {
         text: `Agregaste 1 ${selectedItem.productName}`,
       });
       console.log(localStorage.getItem('cart'))
-    } else {
-        Swal.fire({
-        title: `Diste "Agregar" al producto`,
-        icon: 'warning',
-        text: 'Necesitas ingresar a tu usuario.',
-      });
-    }
+    // } else {
+    //     Swal.fire({
+    //     title: `Diste "Agregar" al producto`,
+    //     icon: 'warning',
+    //     text: 'Necesitas ingresar a tu usuario.',
+    //   });
+    // }
   }
 
 

@@ -1,3 +1,8 @@
+.empty-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .cart-container h2{
     text-align: center;
     font-weight: 700;
@@ -31,6 +36,14 @@
     padding: 0.5em;
     border: 1px solid #171717;
 }
+.cart-item-detail{
+    width: 50%;
+}
+.cart-item-delete{
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+}
+
 .cart-item-img{
     height: 100px;
     overflow: hidden;
@@ -46,7 +59,7 @@
     font-size: 0.65rem;
 }
 .cart-items-subtotal{
-    flex: 2;
+    flex: 3;
     min-width: 320px;
     border: 1px solid #171717;
     height: 8em;
