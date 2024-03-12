@@ -2,7 +2,7 @@
 <br />
   <div align='center'>
   <a href="https://github.com/No-Country/c16-37-m-java-react" target="_blank">
-    <img src="src/assets/img/headerComponent/kara-logo.svg" alt="Banner">
+    <img src="src/assets/img/headerComponent/kara-logo.png" alt="Banner">
   </a>
 <h3>Bienvenid@s a Kara E-commerce</h3></div>
 <div>
