@@ -1,4 +1,4 @@
-﻿<div>
+<div>
 <br />
   <div align='center'>
   <a href="https://github.com/No-Country/c16-37-m-java-react" target="_blank">
