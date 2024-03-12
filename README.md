@@ -1,8 +1,8 @@
-﻿<div>
+<div>
 <br />
   <div align='center'>
   <a href="https://github.com/No-Country/c16-37-m-java-react" target="_blank">
-    <img src="src/assets/img/headerComponent/kara-logo.svg" alt="Banner">
+    <img src="src/assets/img/headerComponent/kara-logo.png" alt="Banner">
   </a>
 <h3>Bienvenid@s a Kara E-commerce</h3></div>
 <div>
@@ -10,16 +10,16 @@
     <strong>E-commerce Zara Clone</strong>. Nuestro proyecto Kara es una replica inspirada en la reconocida tienda de moda Zara. Sumérgete en la experiencia de compra en línea con un toque personalizado y la última moda al alcance de tus manos.
   </p>
     <div align='center'>
-    <a href="https://zara-clone-reactjs.netlify.app/" target="_blank">
+    <a href="https://stockwise-client.vercel.app/" target="_blank">
           <img  src="https://img.shields.io/badge/VER_DEMO-3378FF?style=for-the-badge&logo=vercel&logoColor=%23343B4E"/>
        </a>
    <a href="https://stockwise-iowo.onrender.com/swagger-ui/index.html" target="_blank">
           <img  src="https://img.shields.io/badge/VER_API-3378FF?style=for-the-badge&logo=swagger&logoColor=%23343B4E"/>
       </a>
-    <a href="https://www.figma.com/proto/e477ECP1bzPudsvOfXhvyt/Design-Detectives---Lab-UX006?page-id=5%3A2&type=design&node-id=189-1674&viewport=150%2C243%2C0.03&t=Iy3hfxNxhz9A7Cwl-1&scaling=scale-down&starting-point-node-id=189%3A1674" target="_blank">
+    <a href="https://www.figma.com/file/lIB64kDohOKOsdSNGkOSue/c14-22-ft-java-react" target="_blank">
           <img  src="https://img.shields.io/badge/VER_DISE%C3%91O-3378FF?style=for-the-badge&logo=figma&logoColor=%23343B4E"/>
       </a>
-      <a href="https://github.com/No-Country/c16-37-m-java-react/issues" target="_blank">
+      <a href="https://github.com/No-Country/c14-22-ft-java-react/issues" target="_blank">
           <img  src="https://img.shields.io/badge/REPORTAR_BUG-343B4E?style=for-the-badge"/>
       </a>
       </div>
@@ -27,6 +27,7 @@
 <!-- ABOUT THE PROJECT -->
 <br>
 <h1> 
+<img src="Client/public/favicon.svg" width="18px">
 Acerca del Proyecto
 </h1>
 
