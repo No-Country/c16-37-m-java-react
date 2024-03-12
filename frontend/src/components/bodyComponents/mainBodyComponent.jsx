@@ -1,7 +1,7 @@
 import '../../assets/styles/mainBodyComponent.css'
-import bgZara1 from '../../assets/img/bodyComponent/bg-zara-dresses-1.webp'
-import bgZara2 from '../../assets/img/bodyComponent/bg-zara-dresses-2.webp'
-import bgZara3 from '../../assets/img/bodyComponent/bg-zara-dresses-3.webp'
+import bgZara1 from '../../assets/img/bodyComponent/bg-zara-dresses-1.jpg'
+import bgZara2 from '../../assets/img/bodyComponent/bg-zara-dresses-2.jpg'
+import bgZara3 from '../../assets/img/bodyComponent/bg-zara-dresses-3.jpg'
 import MainBodyCatComponent from './mainBodyCatComponent'
 
 export const MainBodyComponent = () => {
