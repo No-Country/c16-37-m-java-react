@@ -5,12 +5,12 @@ import mercado from "../../../assets/img/icons/mercadolibre.svg";
 import voucher from "../../../assets/img/icons/voucher.svg";
 import gift from "../../../assets/img/icons/gift-card.svg";
 import "../../../assets/styles/cartThreeComponent.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { getStepsCart } from "../../../redux/actions";
+import StepsCartContext from "../../../assets/context/StepsCartContext";
 
 const CartThreeComponent = () => {
-
+  const { handleStepsCart } = useContext(StepsCartContext)
   //estados de casillas de pago
   const [isVisa, setIsVisa] = useState(false);
   const [isMaster, setIsMaster] = useState(false);
@@ -276,7 +276,7 @@ const CartThreeComponent = () => {
                 </div>
                 <div>
                     <Link to='/cart/step-three'>
-                        <button onClick={()=>getStepsCart(3)}>PAGAR</button>
+                        <button onClick={()=>handleStepsCart(3)}>PAGAR</button>
                     </Link>
                 </div>
           </div>

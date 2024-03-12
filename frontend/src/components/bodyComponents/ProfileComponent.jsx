@@ -30,7 +30,7 @@ export const ProfileComponent = () => {
   
   const signOff = () =>{
     localStorage.removeItem('jwt');
-    window.location.href = './';
+    window.location.href = '/';
   }
 
 return (
